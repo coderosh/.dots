@@ -1,0 +1,8 @@
+{
+    "diagnostics.globals": [
+        "client",
+        "tag",
+        "awesome",
+        "screen"
+    ]
+}

@@ -1,0 +1,23 @@
+#!/bin/sh
+
+function encrypt {
+  openssl aes-256-cbc -in $1 -out $2 -pbkdf2
+}
+
+function decrypt {
+  openssl aes-256-cbc -d -in $1 -out $2 -pbkdf2
+}
+
+function help {
+  echo "usage: $0 -e file.txt file.enc"
+  echo "       $0 -d file.enc file.txt"
+  exit 1
+}
+
+if [[ "$1" == "-e" ]]; then
+  encrypt "$2" "$3"
+elif [[ "$1" == "-d" ]]; then
+  decrypt "$2" "$3"
+else
+  help
+fi
