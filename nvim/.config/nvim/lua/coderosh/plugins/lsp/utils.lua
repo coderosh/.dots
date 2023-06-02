@@ -22,11 +22,14 @@ function M.keymaps(bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
   vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<cr>", opts)
-  vim.keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<cr>", opts)
+  vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<cr>", opts)
+  vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
   vim.keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
-  vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<cr>", opts)
+  -- vim.keymap.set("n", "<leader>r", "<cmd>Lspsaga rename<cr>", opts)
+  vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+
   vim.keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
   vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
   vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", opts)
@@ -57,7 +60,7 @@ function M.format()
   local buf = vim.api.nvim_get_current_buf()
   local ft = vim.bo[buf].filetype
   local have_nls = package.loaded["null-ls"]
-      and (#require("null-ls.sources").get_available(ft, "NULL_LS_FORMATTING") > 0)
+    and (#require("null-ls.sources").get_available(ft, "NULL_LS_FORMATTING") > 0)
 
   vim.lsp.buf.format(vim.tbl_deep_extend("force", {
     bufnr = buf,
