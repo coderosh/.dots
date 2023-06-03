@@ -35,6 +35,9 @@ awful.keyboard.append_global_keybindings({
   awful.key({ modkey }, "r", function()
     awful.util.spawn("rofi -show drun")
   end, { description = "run prompt", group = "launcher" }),
+  awful.key({ modkey }, "o", function()
+    awful.util.spawn("rofi -show window")
+  end, { description = "run prompt", group = "launcher" }),
 })
 
 -- General Awesome keys
