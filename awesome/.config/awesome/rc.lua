@@ -13,11 +13,12 @@ require("main.layouts")
 require("main.wallpaper")
 
 require("ui.window-switcher")
+require("ui.scratchpad")
 
 screen.connect_signal("request::desktop_decoration", function(s)
-	awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
 
-	require("ui.topbar")(s)
+  require("ui.topbar")(s)
 end)
 
 require("main.bindings")
