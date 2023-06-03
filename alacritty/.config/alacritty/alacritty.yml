@@ -2,7 +2,7 @@ window:
   padding:
     x: 5
   opacity: 0.9
-  dynamic_title: false
+  dynamic_title: true
 
 font:
   size: 9
