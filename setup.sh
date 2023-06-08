@@ -18,7 +18,7 @@ fi
 
 # ----- Packages -----
 print "Installing packages"
-paru -S neovim fish picom alacritty bat tmux fd lsd rustup vscodium-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git fnm-bin
+paru -S neovim fish picom alacritty bat tmux fd lsd rustup vscodium-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git fnm-bin lxsession lxappearance alsa-utils alsa-plugins arc xarchiver arc-icon-theme ripgrep pnpm stacer-bin rofi materia-gtk-theme
 
 # ----- Configs -----
 print "Setting up configs"
@@ -34,10 +34,9 @@ fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/fun
 # ----- Rust -----
 rustup default stable
 
-# ----- FNM, bun, pnpm -----
+# ----- FNM, bun -----
 fnm completions --shell fish 
 fnm install --lts
-curl -fsSL https://get.pnpm.io/install.sh | sh -
 pnpm install -g bun
 
 # ----- Docker -----
