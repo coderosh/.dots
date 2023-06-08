@@ -29,8 +29,7 @@ bat cache --build
 
 # ----- Fish plugins -----
 print "Installing fish plugins"
-fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
-fish -c "fisher update"
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | fisher update"
 
 # ----- Rust -----
 rustup default stable
