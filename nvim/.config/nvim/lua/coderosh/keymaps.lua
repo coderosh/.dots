@@ -7,6 +7,9 @@ keymap.set("n", "\\", ":vsp<CR>")
 
 keymap.set("n", "<leader>nh", ":nohl<CR>")
 
+keymap.set("n", "<TAB>", ":bn<CR>")
+keymap.set("n", "<S-TAB>", ":bp<CR>")
+
 keymap.set("n", "<C-h>", "<C-w>h")
 keymap.set("n", "<C-j>", "<C-w>j")
 keymap.set("n", "<C-k>", "<C-w>k")

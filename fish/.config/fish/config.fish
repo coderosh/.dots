@@ -17,6 +17,7 @@ eval (fnm env)
 
 
 fish_add_path -g ~/.local/share/pnpm
+
 # pnpm
 set -gx PNPM_HOME "~/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
