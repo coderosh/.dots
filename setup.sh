@@ -22,7 +22,7 @@ paru -S neovim fish picom alacritty bat tmux fd lsd rustup visual-studio-code-bi
 
 # ----- Configs -----
 print "Setting up configs"
-git clone https://github.com/coderosh/.dots
+git clone https://github.com/coderosh/.dots .dots
 cd .dots
 stow */ 
 bat cache --build
