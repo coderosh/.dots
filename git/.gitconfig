@@ -1,0 +1,7 @@
+[user]
+	email = acharyaroshan2357@gmail.com
+	name = Roshan Acharya
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim

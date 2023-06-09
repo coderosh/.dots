@@ -6,12 +6,12 @@ local controller = require("ui.topbar.widgets.volume.controller")
 
 local icons = {
   muted = "󰖁",
-  unmuted = "󰕾"
+  full = "󰕾"
 }
 
 local icon_widget = wibox.widget({
   widget = wibox.widget.textbox,
-  markup = icons.unmuted,
+  markup = icons.full,
   font = beautiful.icon_font,
 })
 
@@ -40,7 +40,7 @@ controller.on_update(function(status)
   if status.is_muted then
     icon_widget.markup = icons.muted
   else
-    icon_widget.markup = icons.unmuted
+    icon_widget.markup = icons.full
   end
   text_widget.markup = " " .. math.floor(status.percentage) .. "%"
 end)
