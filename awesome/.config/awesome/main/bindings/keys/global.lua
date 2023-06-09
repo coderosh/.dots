@@ -3,7 +3,8 @@ local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
-local controller = require("ui.topbar.widgets.brightness.controller")
+local volume_controller = require("ui.topbar.widgets.volume.controller")
+local brightness_controller = require("ui.topbar.widgets.brightness.controller")
 local menu = require("ui.menu")
 local pref = require("main.preferences")
 local modkey = pref.modkey
@@ -15,19 +16,22 @@ awful.keyboard.append_global_keybindings({
   end, { description = "Window Switcher", group = "controls" }),
 
   awful.key({}, "XF86MonBrightnessUp", function()
-    controller.inc()
+    brightness_controller.inc()
   end, { description = "increase brightness", group = "controls" }),
   awful.key({}, "XF86MonBrightnessDown", function()
-    controller.dec()
+    brightness_controller.dec()
   end, { description = "decrease brightness", group = "controls" }),
   awful.key({}, "XF86AudioRaiseVolume", function()
-    awful.spawn("amixer -D pulse sset Master 2%+")
+    -- awful.spawn("amixer -D pulse sset Master 2%+")
+    volume_controller.inc()
   end, { description = "increase volume", group = "controls" }),
   awful.key({}, "XF86AudioLowerVolume", function()
-    awful.spawn("amixer -D pulse sset Master 2%-")
+    -- awful.spawn("amixer -D pulse sset Master 2%-")
+    volume_controller.dec()
   end, { description = "decrease volume", group = "controls" }),
   awful.key({}, "XF86AudioMute", function()
-    awful.spawn("amixer -D pulse sset Master toggle")
+    -- awful.spawn("amixer -D pulse sset Master toggle")
+    volume_controller.toggle_mute()
   end, { description = "mute volume", group = "controls" }),
   awful.key({ "Shift" }, "Print", function()
     awful.spawn("flameshot gui --clipboard -s")

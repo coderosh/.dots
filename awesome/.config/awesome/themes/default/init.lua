@@ -100,8 +100,14 @@ theme.titlebar_maximized_button_focus_inactive = themes_path .. "default/titleba
 theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path .. "default/background.png"
-theme.wallpaper = "~/.config/awesome/themes/wallpapers/anime-girl-sitting.jpg"
+-- theme.wallpaper = themes_path .. "default/background.png"
+-- theme.wallpaper = "~/.config/awesome/themes/wallpapers/anime-girl-sitting.jpg"
+-- theme.wallpaper = "~/.config/awesome/themes/wallpapers/red-dress.jpg"
+-- theme.wallpaper = "~/.config/awesome/themes/wallpapers/hearts.jpg"
+-- theme.wallpaper = "~/.config/awesome/themes/wallpapers/smoking.png"
+-- theme.wallpaper = "~/.config/awesome/themes/wallpapers/headphone.jpg"
+-- theme.wallpaper = "~/.config/awesome/themes/wallpapers/dangers-in-my-heart.jpg"
+theme.wallpaper = "~/.config/awesome/themes/wallpapers/glasses.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "default/layouts/fairhw.png"
@@ -130,10 +136,10 @@ theme.icon_theme = nil
 
 -- Set different colors for urgent notifications.
 rnotification.connect_signal("request::rules", function()
-  rnotification.append_rule({
-    rule = { urgency = "critical" },
-    properties = { bg = "#ff0000", fg = "#ffffff" },
-  })
+    rnotification.append_rule({
+        rule = { urgency = "critical" },
+        properties = { bg = "#ff0000", fg = "#ffffff" },
+    })
 end)
 
 theme.window_switcher_widget_bg = theme.bg_normal

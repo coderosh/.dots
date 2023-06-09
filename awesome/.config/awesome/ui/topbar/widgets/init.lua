@@ -19,6 +19,7 @@ function M.right_widgets(s)
   local datetime = require("ui.topbar.widgets.datetime")
   local battery = require("ui.topbar.widgets.battery")
   local brightness = require("ui.topbar.widgets.brightness")
+  local volume = require("ui.topbar.widgets.volume")
 
   local layoutbox = require("ui.topbar.widgets.layoutbox")(s)
 
@@ -27,6 +28,7 @@ function M.right_widgets(s)
     spacing = 10,
     systray,
     battery,
+    volume,
     brightness,
     datetime,
     layoutbox,

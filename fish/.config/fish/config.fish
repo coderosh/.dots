@@ -11,7 +11,6 @@ alias vic="nvim --clean"
 alias ls=lsd
 alias lsa="lsd -a"
 alias yay=paru
-alias code=vscodium
 
 alias gs="git status"
 alias gd="git diff"

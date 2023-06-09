@@ -10,5 +10,5 @@ run() {
 # run nitrogen --restore
 run picom
 run nm-applet
-run volctl
+# run volctl
 run lxpolkit
