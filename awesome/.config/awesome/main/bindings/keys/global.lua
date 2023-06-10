@@ -5,6 +5,7 @@ require("awful.hotkeys_popup.keys")
 
 local volume_controller = require("ui.topbar.widgets.volume.controller")
 local brightness_controller = require("ui.topbar.widgets.brightness.controller")
+local wp_changer = require("ui.wallpaper-changer")
 local menu = require("ui.menu")
 local pref = require("main.preferences")
 local modkey = pref.modkey
@@ -45,6 +46,10 @@ awful.keyboard.append_global_keybindings({
 
   awful.key({ modkey }, "d", function()
     require("ui.scratchpad"):toggle()
+  end, { description = "run prompt", group = "launcher" }),
+
+  awful.key({ modkey }, "e", function()
+    wp_changer:toggle_popup()
   end, { description = "run prompt", group = "launcher" }),
 })
 

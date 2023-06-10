@@ -18,7 +18,7 @@ fi
 
 # ----- Packages -----
 print "Installing packages"
-paru -S neovim fish picom alacritty bat tmux fd lsd rustup visual-studio-code-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git fnm-bin lxsession lxappearance alsa-utils alsa-plugins arc xarchiver arc-icon-theme ripgrep pnpm stacer-bin rofi materia-gtk-theme discord android-studio android-sdk android-file-transfer gvfs-mtp unityhub android-udev dotnet-runtime dotnet-sdk mono-msbuild mono-msbuild-sdkresolver mono neofetch font-manager cava
+paru -S neovim fish picom alacritty bat tmux fd lsd rustup visual-studio-code-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git fnm-bin lxsession lxappearance alsa-utils alsa-plugins arc xarchiver arc-icon-theme ripgrep pnpm stacer-bin rofi materia-gtk-theme discord android-studio android-sdk android-file-transfer gvfs-mtp unityhub android-udev dotnet-runtime dotnet-sdk mono-msbuild mono-msbuild-sdkresolver mono neofetch font-manager cava xclip yad
 
 # ----- Configs -----
 print "Setting up configs"
@@ -44,3 +44,18 @@ fish -c "bun completions"
 # ----- Docker -----
 sudo systemctl enable docker.service
 sudo usermod -aG docker $USER
+
+# ----- Material Icons Fonts -----
+mkdir -p ~/.temp-fonts-dir
+wget https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIcons-Regular.ttf -P ~/.temp-fonts-dir 
+wget https://raw.githubusercontent.com/google/material-design-icons/master/font/MaterialIconsRound-Regular.otf -P ~/.temp-fonts-dir 
+font-manager -i ~/.temp-fonts-dir/*
+rm -rf ~/.temp-fonts-dir
+
+
+
+
+
+
+
+

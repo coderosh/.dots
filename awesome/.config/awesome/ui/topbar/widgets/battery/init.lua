@@ -50,8 +50,8 @@ local function update_widget()
   local stats = upower:get_status()
 
   if
-    (prev_percentage == 25 and stats.percentage == 24)
-    or (prev_state == upower.State.CHARGING and stats.state == upower.State.DISCHARGING and stats.percentage < 25)
+      (prev_percentage == 25 and stats.percentage == 24)
+      or (prev_state == upower.State.CHARGING and stats.state == upower.State.DISCHARGING and stats.percentage < 25)
   then
     naughty.notification({
       title = "Battery Status",

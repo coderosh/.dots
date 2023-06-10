@@ -4,7 +4,7 @@ local awful = require("awful")
 
 local controller = {}
 
-local on_update = function() end
+local on_update = function(_) end
 
 function controller.on_update(update_fn)
   on_update = update_fn
