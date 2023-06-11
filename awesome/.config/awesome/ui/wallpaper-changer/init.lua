@@ -14,29 +14,35 @@ local wc = {}
 
 wc.wallpapers_dir = gfs.get_configuration_dir() .. "themes/wallpapers/"
 
-local function create_image_widget(src)
+local function create_image_widget(name)
+  local src = wc.wallpapers_dir .. name
+  local thumb = wc.wallpapers_dir .. "thumbnails/" .. name
+
   local image_widget = wibox.widget {
     {
-      image         = src,
+      image         = thumb,
       resize        = true,
       forced_height = 90,
       forced_width  = 160,
       widget        = wibox.widget.imagebox,
+      id            = "image"
     },
     widget = wibox.container.background,
     border_color = beautiful.bg_normal,
     border_width = beautiful.border_width
   }
 
-  image_widget:connect_signal("mouse::enter", function(c)
+
+
+  image_widget:connect_signal("mouse::enter", function()
     image_widget.border_color = beautiful.border_focus
   end)
 
-  image_widget:connect_signal("mouse::leave", function(c)
+  image_widget:connect_signal("mouse::leave", function()
     image_widget.border_color = beautiful.bg_normal
   end)
 
-  image_widget:connect_signal("button::press", function(c)
+  image_widget:connect_signal("button::press", function()
     gwall.maximized(src)
   end)
 
@@ -60,7 +66,7 @@ wc.widget = awful.popup {
           layout = wibox.layout.grid,
         },
         futils.ls(wc.wallpapers_dir, function(name)
-          return create_image_widget(wc.wallpapers_dir .. name)
+          return create_image_widget(name)
         end)
       ),
       spacing = dpi(20),

@@ -15,7 +15,7 @@ local theme = {}
 theme.font = "sans 8"
 theme.font_size = dpi(12)
 theme.font = "Noto Sans Nerd Font " .. theme.font_size
-theme.icon_font = "Noto Sans Nerd Font " .. theme.font_size
+theme.icon_font = "Noto Sans Nerd Font " .. theme.font_size + 2
 
 theme.bg_normal = "#1a1b26aa"
 theme.bg_focus = "#7a96cc"
