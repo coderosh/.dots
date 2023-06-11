@@ -3,6 +3,7 @@
 local awful = require("awful")
 local gwall = require("gears.wallpaper")
 local gtable = require("gears.table")
+local gfs = require("gears.filesystem")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
@@ -10,6 +11,8 @@ local dpi = beautiful.xresources.apply_dpi
 local futils = require("utils.file")
 
 local wc = {}
+
+wc.wallpapers_dir = gfs.get_configuration_dir() .. "themes/wallpapers/"
 
 local function create_image_widget(src)
   local image_widget = wibox.widget {
@@ -56,8 +59,8 @@ wc.widget = awful.popup {
           spacing = dpi(10),
           layout = wibox.layout.grid,
         },
-        futils.ls("~/.config/awesome/themes/wallpapers", function(name)
-          return create_image_widget("/home/coderosh/.config/awesome/themes/wallpapers/" .. name)
+        futils.ls(wc.wallpapers_dir, function(name)
+          return create_image_widget(wc.wallpapers_dir .. name)
         end)
       ),
       spacing = dpi(20),
