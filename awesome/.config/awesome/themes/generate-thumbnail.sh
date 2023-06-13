@@ -5,5 +5,5 @@ mkdir -p wallpapers/thumbnails
 
 for file in wallpapers/*.{jpg,png}; do 
   filename=$(basename "$file"); 
-  ffmpeg -i "$file" -vf "scale=360:180" "wallpapers/thumbnails/${filename}" 
+  ffmpeg -i "$file" -vf "scale=160:90" "wallpapers/thumbnails/${filename}" 
 done
