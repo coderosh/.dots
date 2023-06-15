@@ -11,13 +11,13 @@ local function topbar(s)
     position = "top",
     screen = s,
     bg = beautiful.bg_normal,
-    height = dpi(38),
+    height = dpi(32),
   })
 
   taskbar:setup({
     widget = wibox.container.margin,
-    top = dpi(5),
-    bottom = dpi(5),
+    top = dpi(4),
+    bottom = dpi(4),
     left = dpi(10),
     right = dpi(10),
     {

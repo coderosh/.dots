@@ -18,7 +18,7 @@ fi
 
 # ----- Packages -----
 print "Installing packages"
-paru -S neovim fish picom alacritty bat tmux fd lsd rustup visual-studio-code-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git fnm-bin lxsession lxappearance alsa-utils alsa-plugins arc xarchiver arc-icon-theme ripgrep pnpm stacer-bin rofi materia-gtk-theme discord android-studio android-sdk android-file-transfer gvfs-mtp unityhub android-udev dotnet-runtime dotnet-sdk mono-msbuild mono-msbuild-sdkresolver mono neofetch font-manager cava xclip yad dpkg
+paru -S neovim fish picom alacritty bat tmux fd lsd rustup visual-studio-code-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git fnm-bin lxsession lxappearance alsa-utils alsa-plugins arc xarchiver arc-icon-theme ripgrep pnpm stacer-bin rofi materia-gtk-theme discord android-studio android-sdk android-file-transfer gvfs-mtp unityhub android-udev dotnet-runtime dotnet-sdk mono-msbuild mono-msbuild-sdkresolver mono neofetch font-manager cava xclip yad dpkg wezterm
 
 # ----- Configs -----
 print "Setting up configs"

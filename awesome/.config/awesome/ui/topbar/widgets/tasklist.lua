@@ -25,7 +25,7 @@ local function tasklist(s)
       spacing = 10,
     },
     style = {
-      shape = gears.shape.rounded_rect,
+      shape = gears.shape.squircle,
     },
     widget_template = {
       {
@@ -33,10 +33,10 @@ local function tasklist(s)
           id = "clienticon",
           widget = awful.widget.clienticon,
         },
-        left = 5,
-        right = 5,
-        top = 5,
-        bottom = 5,
+        left = 3,
+        right = 3,
+        top = 3,
+        bottom = 3,
         widget = wibox.container.margin,
       },
       id = "background_role",

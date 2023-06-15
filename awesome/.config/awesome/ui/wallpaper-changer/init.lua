@@ -22,8 +22,8 @@ local function create_image_widget(name)
     {
       image         = thumb,
       resize        = true,
-      forced_height = 90,
-      forced_width  = 160,
+      forced_height = 45,
+      forced_width  = 80,
       widget        = wibox.widget.imagebox,
       id            = "image"
     },
@@ -31,7 +31,6 @@ local function create_image_widget(name)
     border_color = beautiful.bg_normal,
     border_width = beautiful.border_width
   }
-
 
 
   image_widget:connect_signal("mouse::enter", function()

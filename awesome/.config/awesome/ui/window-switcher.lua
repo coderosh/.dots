@@ -14,7 +14,7 @@ local function rrect(radius)
   end
 end
 
-local window_switcher_first_client -- The client that was focused when the window_switcher was activated
+local window_switcher_first_client           -- The client that was focused when the window_switcher was activated
 local window_switcher_minimized_clients = {} -- The clients that were minimized when the window switcher was activated
 local window_switcher_grabber
 
@@ -143,49 +143,49 @@ local function draw_widget(
           },
         },
       })
-    or awful.widget.tasklist({
-      screen = awful.screen.focused(),
-      filter = filterClients,
-      buttons = mouse_keys,
-      style = {
-        font = name_font,
-        fg_normal = name_normal_color,
-        fg_focus = name_focus_color,
-      },
-      layout = {
-        layout = wibox.layout.fixed.vertical,
-        spacing = clients_spacing,
-      },
-      widget_template = {
-        widget = wibox.container.background,
-        id = "bg_role",
-        forced_width = client_width,
-        forced_height = client_height,
-        {
-          {
-            {
-              id = "icon_role",
-              widget = wibox.widget.imagebox,
-            },
-            forced_width = icon_width,
-            valign = icon_valign,
-            widget = wibox.container.place,
-          },
-          {
-            {
-              forced_width = name_forced_width,
-              valign = name_valign,
-              id = "text_role",
-              widget = wibox.widget.textbox,
-            },
-            margins = name_margins,
-            widget = wibox.container.margin,
-          },
-          spacing = client_icon_horizontal_spacing,
-          layout = wibox.layout.fixed.horizontal,
+      or awful.widget.tasklist({
+        screen = awful.screen.focused(),
+        filter = filterClients,
+        buttons = mouse_keys,
+        style = {
+          font = name_font,
+          fg_normal = name_normal_color,
+          fg_focus = name_focus_color,
         },
-      },
-    })
+        layout = {
+          layout = wibox.layout.fixed.vertical,
+          spacing = clients_spacing,
+        },
+        widget_template = {
+          widget = wibox.container.background,
+          id = "bg_role",
+          forced_width = client_width,
+          forced_height = client_height,
+          {
+            {
+              {
+                id = "icon_role",
+                widget = wibox.widget.imagebox,
+              },
+              forced_width = icon_width,
+              valign = icon_valign,
+              widget = wibox.container.place,
+            },
+            {
+              {
+                forced_width = name_forced_width,
+                valign = name_valign,
+                id = "text_role",
+                widget = wibox.widget.textbox,
+              },
+              margins = name_margins,
+              widget = wibox.container.margin,
+            },
+            spacing = client_icon_horizontal_spacing,
+            layout = wibox.layout.fixed.horizontal,
+          },
+        },
+      })
 
   return wibox.widget({
     {
@@ -420,18 +420,18 @@ local enable = function(opts)
 end
 
 enable({
-  type = "thumbnail", -- set to anything other than "thumbnail" to disable client previews
+  type = "thumbnail",                                       -- set to anything other than "thumbnail" to disable client previews
   -- keybindings (the examples provided are also the default if kept unset)
-  hide_window_switcher_key = "Escape", -- The key on which to close the popup
-  minimize_key = "n", -- The key on which to minimize the selected client
-  unminimize_key = "N", -- The key on which to unminimize all clients
-  kill_client_key = "q", -- The key on which to close the selected client
-  cycle_key = "Tab", -- The key on which to cycle through all clients
-  previous_key = "Left", -- The key on which to select the previous client
-  next_key = "Right", -- The key on which to select the next client
-  vim_previous_key = "h", -- Alternative key on which to select the previous client
-  vim_next_key = "l", -- Alternative key on which to select the next client
+  hide_window_switcher_key = "Escape",                      -- The key on which to close the popup
+  minimize_key = "n",                                       -- The key on which to minimize the selected client
+  unminimize_key = "N",                                     -- The key on which to unminimize all clients
+  kill_client_key = "q",                                    -- The key on which to close the selected client
+  cycle_key = "Tab",                                        -- The key on which to cycle through all clients
+  previous_key = "Left",                                    -- The key on which to select the previous client
+  next_key = "Right",                                       -- The key on which to select the next client
+  vim_previous_key = "h",                                   -- Alternative key on which to select the previous client
+  vim_next_key = "l",                                       -- Alternative key on which to select the next client
 
-  cycleClientsByIdx = awful.client.focus.byidx, -- The function to cycle the clients
+  cycleClientsByIdx = awful.client.focus.byidx,             -- The function to cycle the clients
   filterClients = awful.widget.tasklist.filter.currenttags, -- The function to filter the viewed clients
 })

@@ -16,6 +16,7 @@ alias gs="git status"
 alias gd="git diff"
 alias gss="git status -s"
 
+
 fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin
 
