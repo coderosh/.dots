@@ -20,6 +20,7 @@ function M.right_widgets(s)
   local battery = require("ui.topbar.widgets.battery")
   local brightness = require("ui.topbar.widgets.brightness")
   local volume = require("ui.topbar.widgets.volume")
+  -- local network = require("ui.topbar.widgets.network")
 
   local layoutbox = require("ui.topbar.widgets.layoutbox")(s)
 
@@ -27,6 +28,7 @@ function M.right_widgets(s)
     layout = wibox.layout.fixed.horizontal,
     spacing = 10,
     systray,
+    -- network,
     battery,
     volume,
     brightness,

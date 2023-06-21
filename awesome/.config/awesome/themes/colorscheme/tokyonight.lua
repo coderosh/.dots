@@ -14,8 +14,6 @@ local tokyonight = {}
 
 function tokyonight.night(theme)
   theme.widget_bg = night.gray
-  theme.widget_bg_radius = 2
-  theme.widget_bg_margin = 4
 
   theme.bg_normal = night.black .. "bb"
   theme.bg_focus = night.blue
@@ -37,6 +35,8 @@ function tokyonight.night(theme)
   theme.vol_mute_color = night.yellow .. "aa"
   theme.brightness_color = night.magenta
   theme.datetime_color = night.cyan
+  theme.network_color = night.cyan
+  theme.network_color_nocon = night.cyan .. "aa"
 end
 
 return tokyonight

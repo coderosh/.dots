@@ -12,3 +12,4 @@ run picom
 run nm-applet
 # run volctl
 run lxpolkit
+run flameshot

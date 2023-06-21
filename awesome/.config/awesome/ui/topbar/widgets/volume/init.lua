@@ -30,7 +30,7 @@ controller.on_update(function(status)
     volume_widget.change_icon(icons.full, beautiful.vol_color)
   end
 
-  volume_widget.change_text(" " .. math.floor(status.percentage) .. "%")
+  volume_widget.change_text(math.floor(status.percentage) .. "%")
 end)
 
 controller.update()

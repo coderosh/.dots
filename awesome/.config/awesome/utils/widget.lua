@@ -31,7 +31,12 @@ local function topbar_status_widget(icon_widget, text_widget, dont_create_text_w
         widget = wibox.layout.align.horizontal,
       },
       widget = wibox.container.margin,
-      margins = beautiful.widget_bg_margin,
+      margins = {
+        top = beautiful.widget_bg_margin_y,
+        bottom = beautiful.widget_bg_margin_y,
+        left = beautiful.widget_bg_margin_x,
+        right = beautiful.widget_bg_margin_x,
+      },
     },
     widget = wibox.container.background,
     shape = sutils.rrect(beautiful.widget_bg_radius),
@@ -41,10 +46,10 @@ local function topbar_status_widget(icon_widget, text_widget, dont_create_text_w
   return {
     widget = widget,
     change_icon = function(icon, color)
-      icon_widget.markup = tutils.colored_text(icon .. " ", color)
+      icon_widget.markup = tutils.colored_text(icon, color)
     end,
     change_text = function(text, color)
-      text_widget.markup = tutils.colored_text(text, color)
+      text_widget.markup = tutils.colored_text(" " .. text, color)
     end,
   }
 end

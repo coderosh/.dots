@@ -20,6 +20,10 @@ theme.font_size = dpi(12)
 theme.font = "Noto Sans Nerd Font " .. theme.font_size
 theme.icon_font = "Noto Sans Nerd Font " .. theme.font_size
 
+theme.widget_bg_radius = dpi(2)
+theme.widget_bg_margin_x = dpi(5)
+theme.widget_bg_margin_y = dpi(3)
+
 theme.useless_gap = dpi(5)
 theme.border_width = dpi(3)
 theme.systray_icon_spacing = dpi(10)

@@ -11,7 +11,7 @@ local function topbar(s)
     position = "top",
     screen = s,
     bg = beautiful.bg_normal,
-    height = dpi(35),
+    -- height = dpi(36),
   })
 
   taskbar:setup({
