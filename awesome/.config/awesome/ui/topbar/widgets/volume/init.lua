@@ -6,7 +6,7 @@ local controller = require("ui.topbar.widgets.volume.controller")
 
 local icons = {
   muted = "󰖁",
-  full = "󰕾",
+  full = "",
 }
 
 local volume_widget = wutils.topbar_status_widget()

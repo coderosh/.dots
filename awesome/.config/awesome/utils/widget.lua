@@ -17,7 +17,7 @@ local function topbar_status_widget(icon_widget, text_widget, dont_create_text_w
     if not dont_create_text_widget then
       text_widget = wibox.widget({
         widget = wibox.widget.textbox,
-        markup = "Hello",
+        markup = "",
       })
     end
   end
