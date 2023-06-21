@@ -13,11 +13,11 @@ local night = {
 local tokyonight = {}
 
 function tokyonight.night(theme)
-  theme.widget_bg = night.gray .. "bb"
+  theme.widget_bg = night.gray
   theme.widget_bg_radius = 2
   theme.widget_bg_margin = 4
 
-  theme.bg_normal = night.black .. "aa"
+  theme.bg_normal = night.black .. "bb"
   theme.bg_focus = night.blue
   theme.bg_urgent = night.red
   theme.bg_systray = theme.widget_bg
