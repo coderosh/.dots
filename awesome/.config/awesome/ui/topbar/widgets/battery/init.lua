@@ -1,8 +1,8 @@
-local wibox = require("wibox")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
 
-local tutils = require("utils.text")
+local wutils = require("utils.widget")
+
 local upower = require("ui.topbar.widgets.battery.upower")
 
 local empty_icon = "󰂎"
@@ -33,16 +33,7 @@ local function get_icon(percent, state)
   return empty_icon
 end
 
-local icon_widget = wibox.widget({
-  widget = wibox.widget.textbox,
-  markup = "",
-  font = beautiful.icon_font,
-})
-
-local text_widget = wibox.widget({
-  widget = wibox.widget.textbox,
-  markup = "",
-})
+local battery_widget = wutils.topbar_status_widget()
 
 local prev_percentage = nil
 local prev_state = nil
@@ -50,8 +41,8 @@ local function update_widget()
   local stats = upower:get_status()
 
   if
-      (prev_percentage == 25 and stats.percentage == 24)
-      or (prev_state == upower.State.CHARGING and stats.state == upower.State.DISCHARGING and stats.percentage < 25)
+    (prev_percentage == 25 and stats.percentage == 24)
+    or (prev_state == upower.State.CHARGING and stats.state == upower.State.DISCHARGING and stats.percentage < 25)
   then
     naughty.notification({
       title = "Battery Status",
@@ -63,26 +54,19 @@ local function update_widget()
   prev_state = stats.state
 
   local icon_text = get_icon(stats.percentage, stats.state)
-  icon_widget.markup = tutils.colored_text(icon_text, beautiful.bg_focus)
-
-  text_widget.markup = " " .. stats.percentage .. "%"
+  battery_widget.change_icon(icon_text, beautiful.bat_color)
+  battery_widget.change_text(stats.percentage .. "%")
 
   if stats.state == upower.State.DISCHARGING and stats.percentage < 25 then
-    icon_widget.markup = [[<span foreground="#ff1010">]] .. icon_text .. [[</span>]]
+    battery_widget.change_icon(icon_text, beautiful.bat_red_color)
   end
 end
-
-local battery_widget = wibox.widget({
-  icon_widget,
-  text_widget,
-  widget = wibox.layout.align.horizontal,
-})
 
 update_widget()
 upower:on_update(update_widget)
 
 local notification
-battery_widget:connect_signal("button::press", function()
+battery_widget.widget:connect_signal("button::press", function()
   local stats = upower:get_status()
   if notification then
     naughty.destroy(notification)
@@ -106,4 +90,4 @@ battery_widget:connect_signal("button::press", function()
   })
 end)
 
-return battery_widget
+return battery_widget.widget

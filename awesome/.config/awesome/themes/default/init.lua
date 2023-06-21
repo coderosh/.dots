@@ -10,32 +10,18 @@ local dpi = xresources.apply_dpi
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
 
+local apply_colorscheme = require("themes.colorscheme")
+
 local theme = {}
 
-theme.font = "sans 8"
+apply_colorscheme(theme)
+
 theme.font_size = dpi(12)
 theme.font = "Noto Sans Nerd Font " .. theme.font_size
 theme.icon_font = "Noto Sans Nerd Font " .. theme.font_size
 
-theme.bg_normal = "#1a1b26aa"
-theme.bg_focus = "#7a96cc"
-theme.bg_urgent = "#ff0000"
-theme.bg_minimize = "#00000000"
-theme.bg_systray = theme.bg_normal
-
-theme.fg_normal = "#bfbfbf"
-theme.fg_focus = "#ffffff"
-theme.fg_urgent = "#ffffff"
-theme.fg_minimize = "#ffffff"
-
 theme.useless_gap = dpi(5)
-
 theme.border_width = dpi(3)
-theme.border_focus = "#7a96cc"
-theme.border_color_normal = "#000000"
--- theme.border_color_active = "#535d6c"
-theme.border_color_marked = "#91231c"
-
 theme.systray_icon_spacing = dpi(10)
 
 -- There are other variable sets
@@ -138,10 +124,10 @@ theme.icon_theme = nil
 
 -- Set different colors for urgent notifications.
 rnotification.connect_signal("request::rules", function()
-    rnotification.append_rule({
-        rule = { urgency = "critical" },
-        properties = { bg = "#ff0000", fg = "#ffffff" },
-    })
+  rnotification.append_rule({
+    rule = { urgency = "critical" },
+    properties = { bg = theme.bg_urgent, fg = theme.fg_focus },
+  })
 end)
 
 theme.window_switcher_widget_bg = theme.bg_normal

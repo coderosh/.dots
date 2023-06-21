@@ -1,28 +1,14 @@
-local wibox = require("wibox")
 local awful = require("awful")
 local beautiful = require("beautiful")
 
+local wutils = require("utils.widget")
 local controller = require("ui.topbar.widgets.brightness.controller")
 
-local icon_widget = wibox.widget({
-  widget = wibox.widget.textbox,
-  markup = "󰃠",
-  font = beautiful.icon_font,
-})
+local brightness_widget = wutils.topbar_status_widget()
 
-local text_widget = wibox.widget({
-  widget = wibox.widget.textbox,
-  markup = " ",
-})
+brightness_widget.change_icon("󰃠", beautiful.brightness_color)
 
-local brightness_widget = wibox.widget({
-  icon_widget,
-  text_widget,
-  align = "center",
-  widget = wibox.layout.align.horizontal,
-})
-
-brightness_widget:buttons(awful.util.table.join(
+brightness_widget.widget:buttons(awful.util.table.join(
   awful.button({}, 4, function()
     controller.inc()
   end),
@@ -32,9 +18,9 @@ brightness_widget:buttons(awful.util.table.join(
 ))
 
 controller.on_update(function(value)
-  text_widget.markup = " " .. math.floor(value) .. "%"
+  brightness_widget.change_text(" " .. math.floor(value) .. "%")
 end)
 
 controller.update()
 
-return brightness_widget
+return brightness_widget.widget

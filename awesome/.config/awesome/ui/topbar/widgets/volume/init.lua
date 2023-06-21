@@ -1,33 +1,20 @@
-local wibox = require("wibox")
 local awful = require("awful")
 local beautiful = require("beautiful")
 
+local wutils = require("utils.widget")
 local controller = require("ui.topbar.widgets.volume.controller")
 
 local icons = {
   muted = "󰖁",
-  full = "󰕾"
+  full = "󰕾",
 }
 
-local icon_widget = wibox.widget({
-  widget = wibox.widget.textbox,
-  markup = icons.full,
-  font = beautiful.icon_font,
-})
+local volume_widget = wutils.topbar_status_widget()
 
-local text_widget = wibox.widget({
-  widget = wibox.widget.textbox,
-  markup = " ",
-})
-
-local brightness_widget = wibox.widget({
-  icon_widget,
-  text_widget,
-  align = "center",
-  widget = wibox.layout.align.horizontal,
-})
-
-brightness_widget:buttons(awful.util.table.join(
+volume_widget.widget:buttons(awful.util.table.join(
+  awful.button({}, 3, function()
+    controller.toggle_mute()
+  end),
   awful.button({}, 4, function()
     controller.inc()
   end),
@@ -38,13 +25,14 @@ brightness_widget:buttons(awful.util.table.join(
 
 controller.on_update(function(status)
   if status.is_muted then
-    icon_widget.markup = icons.muted
+    volume_widget.change_icon(icons.muted, beautiful.vol_mute_color)
   else
-    icon_widget.markup = icons.full
+    volume_widget.change_icon(icons.full, beautiful.vol_color)
   end
-  text_widget.markup = " " .. math.floor(status.percentage) .. "%"
+
+  volume_widget.change_text(" " .. math.floor(status.percentage) .. "%")
 end)
 
 controller.update()
 
-return brightness_widget
+return volume_widget.widget
