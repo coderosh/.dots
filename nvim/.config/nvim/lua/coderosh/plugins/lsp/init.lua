@@ -32,7 +32,7 @@ local M = {
       null_ls = {
         "prettierd",
         "stylua",
-        "eslint_d",
+        -- "eslint_d",
       },
     })
 

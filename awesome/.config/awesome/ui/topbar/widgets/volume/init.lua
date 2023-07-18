@@ -1,4 +1,5 @@
 local awful = require("awful")
+local gears = require("gears")
 local beautiful = require("beautiful")
 
 local wutils = require("utils.widget")
@@ -26,13 +27,22 @@ volume_widget.widget:buttons(awful.util.table.join(
 controller.on_update(function(status)
   if status.is_muted then
     volume_widget.change_icon(icons.muted, beautiful.vol_mute_color)
+    volume_widget.change_text(math.floor(status.percentage) .. "%", beautiful.vol_mute_color)
   else
     volume_widget.change_icon(icons.full, beautiful.vol_color)
+    volume_widget.change_text(math.floor(status.percentage) .. "%", beautiful.vol_color)
   end
-
-  volume_widget.change_text(math.floor(status.percentage) .. "%")
 end)
 
 controller.update()
+
+gears.timer({
+  timeout = 3,
+  call_now = true,
+  autostart = true,
+  callback = function()
+    controller.update()
+  end,
+})
 
 return volume_widget.widget

@@ -2,7 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-
 alias v=nvim
 alias sv="sudo nvim"
 alias vi=nvim
@@ -15,7 +14,6 @@ alias yay=paru
 alias gs="git status"
 alias gd="git diff"
 alias gss="git status -s"
-
 
 fish_add_path -g ~/.dots/.bin
 fish_add_path -g ~/.cargo/bin

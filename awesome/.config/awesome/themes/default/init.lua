@@ -90,16 +90,7 @@ theme.titlebar_maximized_button_focus_inactive = themes_path .. "default/titleba
 theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
--- theme.wallpaper = themes_path .. "default/background.png"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/anime-girl-sitting.jpg"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/red-dress.jpg"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/hearts.jpg"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/smoking.png"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/headphone.jpg"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/dangers-in-my-heart.jpg"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/glasses.jpg"
--- theme.wallpaper = "~/.config/awesome/themes/wallpapers/saw-a-sunset-that-day-55.jpg"
-theme.wallpaper = "~/.config/awesome/themes/wallpapers/stargazing-midnight-lofi-girl-headphones-illustration-xs.jpg"
+theme.wallpaper = themes_path .. "default/background.png"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "default/layouts/fairhw.png"

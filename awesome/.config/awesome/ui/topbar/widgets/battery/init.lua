@@ -24,7 +24,7 @@ local function get_icon(percent, state)
 
   if state == upower.State.CHARGING then
     if percent < 10 then
-      return empty_icon
+      return charging_icons[1]
     end
 
     return charging_icons[percent // 10]
@@ -55,10 +55,11 @@ local function update_widget()
 
   local icon_text = get_icon(stats.percentage, stats.state)
   battery_widget.change_icon(icon_text, beautiful.bat_color)
-  battery_widget.change_text(stats.percentage .. "%")
+  battery_widget.change_text(stats.percentage .. "%", beautiful.bat_color)
 
   if stats.state == upower.State.DISCHARGING and stats.percentage < 25 then
     battery_widget.change_icon(icon_text, beautiful.bat_red_color)
+    battery_widget.change_text(stats.percentage .. "%", beautiful.bat_red_color)
   end
 end
 

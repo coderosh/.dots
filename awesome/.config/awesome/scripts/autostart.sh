@@ -10,6 +10,7 @@ run() {
 # run nitrogen --restore
 run picom
 run nm-applet
+run nitrogen --restore
 # run volctl
 run lxpolkit
 run flameshot

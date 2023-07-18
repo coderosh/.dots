@@ -25,7 +25,7 @@ local function update_widget()
 
   local info = nm:get_ap_info(ap)
 
-  nm_widget.change_text(info.ssid)
+  nm_widget.change_text(info.ssid, beautiful.network_color)
   nm_widget.change_icon(icons.strength[info.strength // 20], beautiful.network_color)
 end
 

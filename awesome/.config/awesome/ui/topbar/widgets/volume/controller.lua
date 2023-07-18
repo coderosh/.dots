@@ -28,7 +28,7 @@ local function get_percentage_from_stdout(stdout)
 
   return {
     percentage = tonumber(percentage),
-    is_muted = status == "off"
+    is_muted = status == "off",
   }
 end
 

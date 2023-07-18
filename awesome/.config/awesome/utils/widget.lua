@@ -49,7 +49,9 @@ local function topbar_status_widget(icon_widget, text_widget, dont_create_text_w
       icon_widget.markup = tutils.colored_text(icon, color)
     end,
     change_text = function(text, color)
-      text_widget.markup = tutils.colored_text(" " .. text, color)
+      if type(text) == "string" then
+        text_widget.markup = tutils.colored_text(" " .. text, color)
+      end
     end,
   }
 end

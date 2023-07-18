@@ -26,8 +26,6 @@ sh -c "$(curl -sSL https://acharyaroshan.com.np/setup-dots.sh)"
 ## 📷 Screenshots
 
 ![Neofetch](./.assets/neofetch.png)
-<img src=".assets/wallpaper-changer.webp" alt="Wallpaper Changer" width="100%">
-![Neovim Dashboard](./.assets/neovim-dashboard.png)
 ![Neovim](./.assets/neovim.png)
 ![Rofi](./.assets/rofi.png)
 ![Tmux](./.assets/tmux.png)

@@ -18,7 +18,7 @@ brightness_widget.widget:buttons(awful.util.table.join(
 ))
 
 controller.on_update(function(value)
-  brightness_widget.change_text(math.floor(value) .. "%")
+  brightness_widget.change_text(math.floor(value) .. "%", beautiful.brightness_color)
 end)
 
 controller.update()
