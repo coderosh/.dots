@@ -4,6 +4,10 @@ local lgi = require("lgi")
 local UPowerGlib = lgi.UPowerGlib
 
 local function sec_to_hm(seconds)
+  if not seconds then
+    return ""
+  end
+
   local hours = math.floor(seconds / 3600)
   local minutes = math.ceil((seconds % 3600) / 60)
   return string.format("%02dh %02dm", hours, minutes)
@@ -16,8 +20,13 @@ function upower.on_update(self, cb)
 end
 
 function upower.get_status(self)
+  local percentage = 0
+  if self._device.percentage then
+    percentage = math.floor(self._device.percentage)
+  end
+
   return {
-    percentage = math.floor(self._device.percentage),
+    percentage = math.floor(percentage),
     time_to_full = sec_to_hm(self._device.time_to_full),
     time_to_empty = sec_to_hm(self._device.time_to_empty),
     -- state = shelpers.first_letter_capital(UPowerGlib.Device.state_to_string(self._device.state)),

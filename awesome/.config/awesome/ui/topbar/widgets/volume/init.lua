@@ -25,12 +25,18 @@ volume_widget.widget:buttons(awful.util.table.join(
 ))
 
 controller.on_update(function(status)
+  local percentage_floor = 0
+
+  if status.percentage then
+    percentage_floor = math.floor(status.percentage)
+  end
+
   if status.is_muted then
     volume_widget.change_icon(icons.muted, beautiful.vol_mute_color)
-    volume_widget.change_text(math.floor(status.percentage) .. "%", beautiful.vol_mute_color)
+    volume_widget.change_text(percentage_floor .. "%", beautiful.vol_mute_color)
   else
     volume_widget.change_icon(icons.full, beautiful.vol_color)
-    volume_widget.change_text(math.floor(status.percentage) .. "%", beautiful.vol_color)
+    volume_widget.change_text(percentage_floor .. "%", beautiful.vol_color)
   end
 end)
 
