@@ -33,7 +33,16 @@ print_help() {
 colorscheme="$1"
 
 if colorscheme_exists $colorscheme; then
+  # awesome
   sed -i "s/local colorscheme = colorschemes\.[^ ]*/local colorscheme = colorschemes.$colorscheme/" ~/.config/awesome/themes/colorscheme/init.lua
+
+  # neovim
+  sed -i "s/local colorscheme = colorschemes\.[^ ]*/local colorscheme = colorschemes.$colorscheme/" ~/.config/nvim/lua/coderosh/plugins/colorscheme.lua
+
+  # alacritty
+  sed -i "s/config\/alacritty\/[^ ]*\.yml/config\/alacritty\/$colorscheme.yml/" ~/.config/alacritty/alacritty.yml
+
+  # TODO: tmux
 else
   print_help
 fi

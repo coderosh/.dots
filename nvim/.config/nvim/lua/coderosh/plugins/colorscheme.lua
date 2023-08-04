@@ -1,24 +1,23 @@
-local M = {
-  {
+local colorschemes = {
+  tokyonight_night = {
     "folke/tokyonight.nvim",
-    -- lazy = false,
-    -- config = function()
-    --   local tokyonight = require("tokyonight")
-    --   require("tokyonight").setup({
-    --     style = "night",
-    --     enable = true,
-    --   })
-    --   tokyonight.load()
-    -- end,
+    config = function()
+      local tokyonight = require("tokyonight")
+      require("tokyonight").setup({
+        style = "night",
+        enable = true,
+      })
+
+      tokyonight.load()
+    end,
   },
-  {
+  rosepine_main = {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
     config = function()
-      vim.opt.laststatus = 2 -- Or 3 for global statusline
-      vim.opt.statusline = " %f %m %= %l:%c ♥ "
-      require("rose-pine").setup({
+      local rosepine = require("rose-pine")
+
+      rosepine.setup({
         variant = "main",
         disable_italics = true,
         highlight_groups = {
@@ -35,5 +34,16 @@ local M = {
     end,
   },
 }
+
+-- INFO: ccolorscheme sets this variable
+local colorscheme = colorschemes.tokyonight_night
+
+colorscheme.lazy = false
+
+-- so that lazy won't list unused colorscheme in uninstall list
+local M = {}
+for _, value in pairs(colorschemes) do
+  table.insert(M, value)
+end
 
 return M

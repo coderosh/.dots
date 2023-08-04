@@ -6,7 +6,7 @@ local colorschemes = {
   rosepine_main = rosepine.main,
 }
 
-local colorscheme = colorschemes.rosepine_main
+local colorscheme = colorschemes.tokyonight_night
 
 return {
   colorscheme = colorscheme,
