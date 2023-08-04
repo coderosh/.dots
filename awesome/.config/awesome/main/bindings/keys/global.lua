@@ -7,6 +7,7 @@ local volume_controller = require("ui.topbar.widgets.volume.controller")
 local brightness_controller = require("ui.topbar.widgets.brightness.controller")
 local menu = require("ui.menu")
 local pref = require("main.preferences")
+local revelation = require("main.revelation")
 local modkey = pref.modkey
 local terminal = pref.terminal
 
@@ -14,6 +15,8 @@ awful.keyboard.append_global_keybindings({
   awful.key({ "Mod1" }, "Tab", function()
     awesome.emit_signal("bling::window_switcher::turn_on")
   end, { description = "Window Switcher", group = "controls" }),
+
+  awful.key({ modkey }, "e", revelation, { description = "Revelation", group = "controls" }),
 
   awful.key({}, "XF86MonBrightnessUp", function()
     brightness_controller.inc()

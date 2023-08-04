@@ -7,6 +7,7 @@ require("awful.autofocus")
 require("main.handle-error")
 
 require("themes")
+require("main.revelation").init()
 
 require("main.layouts")
 
