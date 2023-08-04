@@ -1,3 +1,14 @@
+local rosepine = require("themes.colorscheme.rosepine")
 local tokyonight = require("themes.colorscheme.tokyonight")
 
-return tokyonight.night
+local colorschemes = {
+    tokyonight_night = tokyonight.night,
+    rosepine_main = rosepine.main
+}
+
+local colorscheme = colorschemes.tokyonight_night
+
+return {
+    colorscheme = colorscheme,
+    colorschemes = colorschemes
+}

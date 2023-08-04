@@ -2,15 +2,15 @@
 -- Default awesome theme --
 ---------------------------
 
-local theme_assets = require("beautiful.theme_assets")
+local gfs = require("gears.filesystem")
 local xresources = require("beautiful.xresources")
 local rnotification = require("ruled.notification")
+local theme_assets = require("beautiful.theme_assets")
+
+local apply_colorscheme = require("themes.colorscheme").colorscheme
+
 local dpi = xresources.apply_dpi
-
-local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
-
-local apply_colorscheme = require("themes.colorscheme")
 
 local theme = {}
 
