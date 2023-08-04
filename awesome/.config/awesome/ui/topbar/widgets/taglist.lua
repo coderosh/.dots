@@ -19,6 +19,8 @@ local function update_taglist(item, tag)
   else
     item:get_children_by_id("marker")[1].markup = tutils.colored_text(icons.filled, beautiful.bg_focus .. "77")
   end
+
+  -- item:get_children_by_id("marker")[1].markup = tag.index
 end
 
 local modkey = require("main.preferences").modkey

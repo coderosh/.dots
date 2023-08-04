@@ -33,6 +33,8 @@ function tokyonight.night(theme)
   theme.bat_red_color = night.red
   theme.vol_color = night.yellow
   theme.vol_mute_color = night.yellow .. "aa"
+  theme.mic_color = night.blue
+  theme.mic_mute_color = night.blue .. "aa"
   theme.brightness_color = night.magenta
   theme.datetime_color = night.cyan
   theme.network_color = night.cyan

@@ -25,6 +25,7 @@ end
 local function get_percentage_from_stdout(stdout)
   -- local percentage_str = stdout:match("%[(%d+)%%%]")
   local percentage, status = stdout:match("%[(%d+)%%%] %[(%a+)%]")
+  controller._percentage = percentage
 
   return {
     percentage = tonumber(percentage),
@@ -37,7 +38,7 @@ function controller.update(stdout)
     on_update(get_percentage_from_stdout(stdout))
     return
   end
-  awful.spawn.easy_async("amixer sget Master", function(stdout)
+  awful.spawn.easy_async("amixer -D pulse sget Master", function(stdout)
     on_update(get_percentage_from_stdout(stdout))
   end)
 end

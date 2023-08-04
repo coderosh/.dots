@@ -7,10 +7,10 @@ run() {
 }
 
 # run feh --bg-fill /usr/share/backgrounds/Backgrounds/1584744923895.png
-# run nitrogen --restore
+# run volctl
 run picom
 run nm-applet
 run nitrogen --restore
-# run volctl
 run lxpolkit
 run flameshot
+run discord --start-minimized

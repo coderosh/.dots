@@ -25,7 +25,7 @@ theme.widget_bg_margin_x = dpi(5)
 theme.widget_bg_margin_y = dpi(3)
 
 theme.useless_gap = dpi(5)
-theme.border_width = dpi(3)
+theme.border_width = dpi(1)
 theme.systray_icon_spacing = dpi(10)
 
 -- There are other variable sets
