@@ -36,7 +36,7 @@ local colorschemes = {
 }
 
 -- INFO: ccolorscheme sets this variable
-local colorscheme = colorschemes.tokyonight_night
+local colorscheme = colorschemes.rosepine_main
 
 colorscheme.lazy = false
 
