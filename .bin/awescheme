@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+declare -a colorschemes=(
+   rosepine_main
+   tokyonight_night
+)
+
+colorscheme_exists() {
+  local element="$1"
+
+  for item in "${colorschemes[@]}"; do
+    if [ "$item" == "$element" ]; then
+      return 0
+    fi
+  done
+  
+  return 1
+}
+
+print_help() {
+  echo "usage: $0 colorscheme_name"
+  echo ""
+  echo "colorschemes:" 
+
+  for item in "${colorschemes[@]}"; do
+    echo "    $item"
+  done
+
+  exit 1
+}
+
+
+colorscheme="$1"
+
+if colorscheme_exists $colorscheme; then
+  sed -i "s/local colorscheme = colorschemes\.[^ ]*/local colorscheme = colorschemes.$colorscheme/" ~/.config/awesome/themes/colorscheme/init.lua
+else
+  print_help
+fi
