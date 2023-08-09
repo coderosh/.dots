@@ -30,6 +30,7 @@ ruled.client.connect_signal("request::rules", function()
         "Wpa_gui",
         "veromix",
         "xtightvncviewer",
+        "Protonvpn",
       },
       -- Note that the name property shown in xprop might be set slightly after creation of the client
       -- and the name shown there might not match defined rules here.
@@ -65,10 +66,14 @@ ruled.client.connect_signal("request::rules", function()
     },
   })
 
-  -- Set Firefox to always map on the tag named "2" on screen 1.
   ruled.client.append_rule({
-    rule = { class = "discord" },
+    rule_any = { class = { "TelegramDesktop", "discord" } },
     properties = { screen = 1, tag = "9" },
+  })
+
+  ruled.client.append_rule({
+    rule_any = { class = { "Nitrogen", "Pavucontrol" } },
+    properties = { screen = 1, tag = "8" },
   })
 end)
 -- }}}

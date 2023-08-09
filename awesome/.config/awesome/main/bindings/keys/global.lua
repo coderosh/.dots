@@ -49,6 +49,10 @@ awful.keyboard.append_global_keybindings({
   awful.key({ modkey }, "d", function()
     require("ui.scratchpad"):toggle()
   end, { description = "run prompt", group = "launcher" }),
+
+  awful.key({ modkey }, "l", function()
+    awful.util.spawn("betterlockscreen -l")
+  end, { description = "lockscreen", group = "launcher" }),
 })
 
 -- General Awesome keys

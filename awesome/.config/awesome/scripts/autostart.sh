@@ -9,8 +9,13 @@ run() {
 # run feh --bg-fill /usr/share/backgrounds/Backgrounds/1584744923895.png
 # run volctl
 run picom
-run nm-applet
-run nitrogen --restore
 run lxpolkit
+run nitrogen --restore
+
+run nm-applet
 run flameshot
-run discord --start-minimized
+run xfce4-clipman
+# run discord --start-minimized
+
+run discord
+

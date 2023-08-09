@@ -8,7 +8,7 @@ import:
   - "~/.config/alacritty/rosepine_main.yml"
 
 font:
-  size: 9
+  size: 10
   normal:
     family: "FiraCode Nerd Font"
     style: Regular

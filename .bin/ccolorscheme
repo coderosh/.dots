@@ -43,6 +43,10 @@ if colorscheme_exists $colorscheme; then
   sed -i "s/config\/alacritty\/[^ ]*\.yml/config\/alacritty\/$colorscheme.yml/" ~/.config/alacritty/alacritty.yml
 
   # TODO: tmux
+
+
+  # Restart awesome
+  awesome-client 'awesome.restart()'
 else
   print_help
 fi
