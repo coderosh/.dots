@@ -15,12 +15,12 @@ local function create_colorscheme(theme, black, white, gray, red, green, blue, y
   theme.fg_minimize = white
 
   -- for widgets
-  theme.bat_color = green
+  theme.bat_color = blue
   theme.bat_red_color = red
   theme.vol_color = yellow
   theme.vol_mute_color = yellow .. "aa"
-  theme.mic_color = blue
-  theme.mic_mute_color = blue .. "aa"
+  theme.mic_color = green
+  theme.mic_mute_color = green .. "aa"
   theme.brightness_color = magenta
   theme.datetime_color = cyan
   theme.network_color = cyan

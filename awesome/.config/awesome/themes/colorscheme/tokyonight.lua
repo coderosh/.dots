@@ -1,3 +1,5 @@
+local create_colorscheme = require("themes.colorscheme.create_colorscheme")
+
 local night = {
   black = "#1a1b26",
   red = "#f7768e",
@@ -7,37 +9,24 @@ local night = {
   magenta = "#bb9af7",
   cyan = "#7dcfff",
   gray = "#343b58",
+  white = "#ffffff",
 }
 
 local tokyonight = {}
 
 function tokyonight.night(theme)
-  theme.widget_bg = night.gray
-
-  theme.bg_normal = night.black .. "bb"
-  theme.bg_focus = night.blue
-  theme.bg_urgent = night.red
-  theme.bg_systray = theme.widget_bg
-  theme.border_focus = night.blue
-  theme.border_color_normal = night.black
-  theme.border_color_marked = night.red
-  theme.bg_minimize = "#00000000"
-  theme.fg_normal = "#bfbfbf"
-  theme.fg_focus = "#ffffff"
-  theme.fg_urgent = "#ffffff"
-  theme.fg_minimize = "#ffffff"
-
-  -- for widgets
-  theme.bat_color = night.green
-  theme.bat_red_color = night.red
-  theme.vol_color = night.yellow
-  theme.vol_mute_color = night.yellow .. "aa"
-  theme.mic_color = night.blue
-  theme.mic_mute_color = night.blue .. "aa"
-  theme.brightness_color = night.magenta
-  theme.datetime_color = night.cyan
-  theme.network_color = night.cyan
-  theme.network_color_nocon = night.cyan .. "aa"
+  return create_colorscheme(
+    theme,
+    night.black,
+    night.white,
+    night.gray,
+    night.red,
+    night.green,
+    night.blue,
+    night.yellow,
+    night.magenta,
+    night.cyan
+  )
 end
 
 return tokyonight
