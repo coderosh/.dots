@@ -17,6 +17,7 @@ ruled.notification.connect_signal("request::rules", function()
         bg = beautiful.notif.message_bg[urgency],
         fg = beautiful.notif.message_fg[urgency],
         timeout = timeouts[i],
+        border_width = dpi(0)
       },
     })
   end
@@ -48,7 +49,7 @@ naughty.connect_signal("request::display", function(n)
         widget = naughty.widget.title,
       },
     },
-    widget = wibox.widget.background,
+    widget = wibox.container.background,
     bg = beautiful.notif.title_bg,
   })
 
@@ -63,18 +64,24 @@ naughty.connect_signal("request::display", function(n)
       layout = wibox.layout.fixed.vertical,
       title,
       {
-        widget = wibox.container.margin,
-        margins = gaps,
+        widget = naughty.container.background,
         {
-          layout = wibox.layout.fixed.horizontal,
-          spacing = gaps,
-          naughty.widget.icon,
-          naughty.widget.message,
-        },
-      },
-      {
-        widget = naughty.list.actions,
-      },
+          layout = wibox.layout.fixed.vertical,
+          {
+            widget = wibox.container.margin,
+            margins = gaps,
+            {
+              layout = wibox.layout.fixed.horizontal,
+              spacing = gaps,
+              naughty.widget.icon,
+              naughty.widget.message,
+            },
+          },
+          {
+            widget = naughty.list.actions,
+          },
+        }
+      }
     },
   })
 end)

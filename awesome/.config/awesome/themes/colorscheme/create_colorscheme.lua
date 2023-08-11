@@ -39,7 +39,7 @@ local function create_colorscheme(theme, black, white, gray, red, green, blue, y
       normal = white,
       critical = red,
       low = white,
-    }
+    },
   }
 
   return theme
