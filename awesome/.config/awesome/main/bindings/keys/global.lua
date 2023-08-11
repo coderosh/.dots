@@ -1,12 +1,14 @@
 local awful = require("awful")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+
 require("awful.hotkeys_popup.keys")
 
 local volume_controller = require("ui.topbar.widgets.volume.controller")
 local brightness_controller = require("ui.topbar.widgets.brightness.controller")
 local menu = require("ui.menu")
 local pref = require("main.preferences")
+local xrandr = require("main.xrandr")
 local revelation = require("main.revelation")
 local modkey = pref.modkey
 local terminal = pref.terminal
@@ -53,6 +55,10 @@ awful.keyboard.append_global_keybindings({
   awful.key({ modkey }, "l", function()
     awful.util.spawn("betterlockscreen -l")
   end, { description = "lockscreen", group = "launcher" }),
+
+  awful.key({ modkey }, "x", function()
+    xrandr.xrandr()
+  end, { description = "xrandr", group = "launcher" }),
 })
 
 -- General Awesome keys

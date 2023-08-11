@@ -10,6 +10,7 @@ local function create_colorscheme(theme, black, white, gray, red, green, blue, y
   theme.border_color_marked = red
   theme.bg_minimize = "#00000000"
   theme.fg_normal = "#bfbfbf"
+  theme.fg_normal = white
   theme.fg_focus = white
   theme.fg_urgent = white
   theme.fg_minimize = white
@@ -25,6 +26,21 @@ local function create_colorscheme(theme, black, white, gray, red, green, blue, y
   theme.datetime_color = cyan
   theme.network_color = cyan
   theme.network_color_nocon = cyan .. "aa"
+
+  theme.notif = {
+    title_bg = gray,
+    border_color = blue,
+    message_bg = {
+      normal = black,
+      critical = black,
+      low = black,
+    },
+    message_fg = {
+      normal = white,
+      critical = red,
+      low = white,
+    }
+  }
 
   return theme
 end

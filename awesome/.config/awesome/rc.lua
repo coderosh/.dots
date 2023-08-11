@@ -7,6 +7,7 @@ require("awful.autofocus")
 require("main.handle-error")
 
 require("themes")
+
 require("main.revelation").init()
 
 require("main.layouts")
@@ -14,6 +15,7 @@ require("main.layouts")
 require("main.wallpaper")
 
 require("ui.scratchpad")
+
 require("ui.window-switcher")
 
 screen.connect_signal("request::desktop_decoration", function(s)

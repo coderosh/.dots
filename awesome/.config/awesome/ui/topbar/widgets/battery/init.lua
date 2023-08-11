@@ -1,5 +1,10 @@
 local naughty = require("naughty")
+local wibox = require("wibox")
+local gears = require("gears")
 local beautiful = require("beautiful")
+
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 
 local wutils = require("utils.widget")
 
@@ -46,7 +51,8 @@ local function update_widget()
   then
     naughty.notification({
       title = "Battery Status",
-      text = "Battery Low, Please Charge",
+      mesage = "Battery Low, Please Charge",
+      urgency = "critical",
     })
   end
 
@@ -85,9 +91,17 @@ battery_widget.widget:connect_signal("button::press", function()
     state = "\nFully Charged"
   end
 
+  local icon_text = get_icon(stats.percentage, stats.state)
+  local noti_icon = wibox.widget({
+    widget = wibox.widget.textbox,
+    markup = icon_text,
+    font = beautiful.icon_font_name .. " " .. dpi(16),
+  })
+
   notification = naughty.notification({
     title = "Battery Status",
     text = stats.percentage .. "%" .. state .. time,
+    image = gears.surface.widget_to_surface(noti_icon, 30, 30),
   })
 end)
 

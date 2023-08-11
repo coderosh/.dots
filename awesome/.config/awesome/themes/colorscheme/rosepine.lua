@@ -1,4 +1,5 @@
 local create_colorscheme = require("themes.colorscheme.create_colorscheme")
+
 local main = {
   base = "#191724",
   red = "#eb6f92",
@@ -28,6 +29,7 @@ function rosepine.main(theme)
   )
 
   theme.border_focus = main.purple
+  theme.bg_focus = main.purple
 
   return theme
 end

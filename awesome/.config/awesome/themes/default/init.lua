@@ -16,9 +16,14 @@ local theme = {}
 
 apply_colorscheme(theme)
 
+theme.font_name = "Noto Sans Nerd Font"
 theme.font_size = dpi(12)
-theme.font = "Noto Sans Nerd Font " .. theme.font_size
-theme.icon_font = "Noto Sans Nerd Font " .. theme.font_size
+
+theme.icon_font_name = "Noto Sans Nerd Font"
+theme.icon_font_size = dpi(12)
+
+theme.font = theme.font_name .. " " .. theme.font_size
+theme.icon_font = theme.icon_font_name .. " " .. theme.icon_font_size
 
 theme.widget_bg_radius = dpi(2)
 theme.widget_bg_margin_x = dpi(5)
@@ -91,6 +96,7 @@ theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
 theme.wallpaper = themes_path .. "default/background.png"
+theme.wallpaper = "~/.dots/.wallpapers/animegirl-alone-night-window-candle.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "default/layouts/fairhw.png"
