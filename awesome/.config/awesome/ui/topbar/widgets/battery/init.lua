@@ -38,21 +38,46 @@ local function get_icon(percent, state)
   return empty_icon
 end
 
+local notification
+local notification_icon_widget = wibox.widget({
+  widget = wibox.widget.textbox,
+  markup = "",
+  font = beautiful.icon_font_name .. " " .. dpi(16),
+})
+
+local function send_notification(opts)
+  notification_icon_widget.markup = get_icon(opts.percentage, opts.state)
+
+  notification = naughty.notification({
+    title = opts.title,
+    text = opts.text,
+    image = gears.surface.widget_to_surface(notification_icon_widget, 30, 30),
+    urgency = opts.urgency or "normal",
+  })
+end
+
 local battery_widget = wutils.topbar_status_widget()
 
-local prev_percentage = nil
+local prev_percentage = 0
 local prev_state = nil
 local function update_widget()
   local stats = upower:get_status()
 
+  local limit_point = 25
   if
-    (prev_percentage == 25 and stats.percentage == 24)
-    or (prev_state == upower.State.CHARGING and stats.state == upower.State.DISCHARGING and stats.percentage < 25)
+    (prev_percentage >= limit_point and stats.percentage < limit_point)
+    or (
+      prev_state == upower.State.CHARGING
+      and stats.state == upower.State.DISCHARGING
+      and stats.percentage < limit_point
+    )
   then
-    naughty.notification({
+    send_notification({
       title = "Battery Status",
-      mesage = "Battery Low, Please Charge",
+      text = "Bettery Low, Please Charge",
       urgency = "critical",
+      percentage = stats.percentage,
+      state = stats.state,
     })
   end
 
@@ -63,7 +88,7 @@ local function update_widget()
   battery_widget.change_icon(icon_text, beautiful.bat_color)
   battery_widget.change_text(stats.percentage .. "%", beautiful.bat_color)
 
-  if stats.state == upower.State.DISCHARGING and stats.percentage < 25 then
+  if stats.state == upower.State.DISCHARGING and stats.percentage < limit_point then
     battery_widget.change_icon(icon_text, beautiful.bat_red_color)
     battery_widget.change_text(stats.percentage .. "%", beautiful.bat_red_color)
   end
@@ -72,7 +97,13 @@ end
 update_widget()
 upower:on_update(update_widget)
 
-local notification
+-- Notification
+local notificaion_icon_widget = wibox.widget({
+  widget = wibox.widget.textbox,
+  markup = "",
+  font = beautiful.icon_font_name .. " " .. dpi(16),
+})
+
 battery_widget.widget:connect_signal("button::press", function()
   local stats = upower:get_status()
   if notification then
@@ -91,17 +122,13 @@ battery_widget.widget:connect_signal("button::press", function()
     state = "\nFully Charged"
   end
 
-  local icon_text = get_icon(stats.percentage, stats.state)
-  local noti_icon = wibox.widget({
-    widget = wibox.widget.textbox,
-    markup = icon_text,
-    font = beautiful.icon_font_name .. " " .. dpi(16),
-  })
+  notificaion_icon_widget.markup = get_icon(stats.percentage, stats.state)
 
-  notification = naughty.notification({
-    title = "Battery Status",
+  send_notification({
+    title = "Batter Status",
     text = stats.percentage .. "%" .. state .. time,
-    image = gears.surface.widget_to_surface(noti_icon, 30, 30),
+    percentage = stats.percentage,
+    state = stats.state,
   })
 end)
 

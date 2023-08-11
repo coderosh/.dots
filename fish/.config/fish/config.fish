@@ -19,5 +19,4 @@ fish_add_path -g ~/.dots/.bin
 fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin
 
-fish_add_path -g ~/.local/share/fnm
-eval (fnm env)
+rtx activate fish | source

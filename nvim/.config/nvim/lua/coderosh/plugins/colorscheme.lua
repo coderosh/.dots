@@ -5,7 +5,7 @@ local function tokyonight(variant)
     enable = true,
   })
 
-  tokyonight.load()
+  tk.load()
 end
 
 local function rosepine(variant)

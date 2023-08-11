@@ -41,7 +41,7 @@ do
         ;;
         "all other not related to dots packages and bloatware")
             install_type="full"
-            packages_to_install="neovim xfce4-clipman-plugin feh fish picom alacritty bat tmux fd lsd rustup visual-studio-code-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git fnm-bin lxsession lxappearance alsa-utils alsa-plugins arc xarchiver arc-icon-theme ripgrep pnpm stacer-bin rofi materia-gtk-theme discord android-studio android-sdk android-file-transfer gvfs-mtp unityhub android-udev dotnet-runtime dotnet-sdk mono-msbuild mono-msbuild-sdkresolver mono neofetch font-manager cava xclip yad dpkg wezterm luarocks redshift nitrogen betterlockscreen"
+            packages_to_install="neovim xfce4-clipman-plugin feh fish picom alacritty bat tmux fd lsd rustup visual-studio-code-bin brave-bin nemo docker brightnessctl network-manager-applet volctl flameshot xsel stow obsidian obs-studio ttf-noto-nerd ttf-firacode-nerd awesome-git rtx lxsession lxappearance alsa-utils alsa-plugins arc xarchiver arc-icon-theme ripgrep pnpm stacer-bin rofi materia-gtk-theme discord android-studio android-sdk android-file-transfer gvfs-mtp unityhub android-udev dotnet-runtime dotnet-sdk mono-msbuild mono-msbuild-sdkresolver mono neofetch font-manager cava xclip yad dpkg wezterm luarocks redshift nitrogen betterlockscreen"
             break
         ;;
         *)
@@ -80,10 +80,13 @@ fi
 # ----- Rust -----
 rustup default stable
 
-# ----- FNM, bun -----
-fnm completions --shell fish
-fnm install --lts
-npm install -g bun
+# ----- node, bun -----
+rtx install nodejs@lts
+rtx use nodejs@lts
+
+rtx p i bun
+rtx install bun
+rtx use bun
 fish -c "bun completions"
 
 # ----- Docker -----
