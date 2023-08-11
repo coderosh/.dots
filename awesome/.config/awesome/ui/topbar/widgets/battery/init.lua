@@ -125,7 +125,7 @@ battery_widget.widget:connect_signal("button::press", function()
   notificaion_icon_widget.markup = get_icon(stats.percentage, stats.state)
 
   send_notification({
-    title = "Batter Status",
+    title = "Battery Status",
     text = stats.percentage .. "%" .. state .. time,
     percentage = stats.percentage,
     state = stats.state,
