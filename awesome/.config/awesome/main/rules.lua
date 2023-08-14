@@ -72,8 +72,13 @@ ruled.client.connect_signal("request::rules", function()
   })
 
   ruled.client.append_rule({
-    rule_any = { class = { "Nitrogen", "Pavucontrol" } },
+    rule_any = { class = { "Nitrogen", "Pavucontrol", "Protonvpn" } },
     properties = { screen = 1, tag = "8" },
+  })
+
+  ruled.client.append_rule({
+    rule_any = { class = { "Spotify" } },
+    properties = { screen = 1, tag = "7" },
   })
 end)
 -- }}}

@@ -17,9 +17,9 @@ local awesomemenu = {
       hotkeys_popup.show_help(nil, awful.screen.focused())
     end,
   },
-  { "Manual",      terminal .. " -e man awesome" },
+  { "Manual", terminal .. " -e man awesome" },
   { "Edit Config", editor_cmd .. " " .. awesome.conffile },
-  { "Restart",     awesome.restart },
+  { "Restart", awesome.restart },
   {
     "Quit",
     function()
@@ -30,10 +30,11 @@ local awesomemenu = {
 
 local menu = awful.menu({
   items = {
-    { "Awesome",  awesomemenu, beautiful.awesome_icon },
+    { "Awesome", awesomemenu, beautiful.awesome_icon },
     { "Terminal", terminal },
-    { "Files",    files },
-    { "Browser",  browser },
+    { "Files", files },
+    { "Browser", browser },
+    { "ARandR", "arandr" },
   },
 })
 

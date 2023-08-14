@@ -20,3 +20,4 @@ fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin
 
 rtx activate fish | source
+fish_add_path /home/coderosh/.spicetify

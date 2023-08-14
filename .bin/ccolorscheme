@@ -3,6 +3,7 @@
 declare -a colorschemes=(
    rosepine_main
    tokyonight_night
+   catppuccin_mocha
 )
 
 colorscheme_exists() {
@@ -46,7 +47,9 @@ if colorscheme_exists $colorscheme; then
 
 
   # Restart awesome
-  awesome-client 'awesome.restart()'
+  awesome-client 'awesome.restart()' 2> /dev/null
+
+  echo "Done"
 else
   print_help
 fi
