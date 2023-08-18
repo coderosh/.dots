@@ -5,7 +5,7 @@ window:
   dynamic_title: true
 
 import:
-  - "~/.config/alacritty/catppuccin_mocha.yml"
+  - "~/.config/alacritty/rosepine_main.yml"
 
 font:
   size: 10

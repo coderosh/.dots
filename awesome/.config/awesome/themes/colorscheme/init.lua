@@ -8,7 +8,7 @@ local colorschemes = {
   catppuccin_mocha = catppuccin.mocha,
 }
 
-local colorscheme = colorschemes.catppuccin_mocha
+local colorscheme = colorschemes.rosepine_main
 
 return {
   colorscheme = colorscheme,

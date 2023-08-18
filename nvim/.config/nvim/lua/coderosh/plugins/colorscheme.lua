@@ -71,7 +71,7 @@ local colorschemes = {
 }
 
 -- INFO: ccolorscheme sets this variable
-local colorscheme = colorschemes.catppuccin_mocha
+local colorscheme = colorschemes.rosepine_main
 
 colorscheme.lazy = false
 
