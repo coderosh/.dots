@@ -24,6 +24,3 @@ keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 keymap.set("n", "<leader>w", ":w<CR>")
 
 keymap.set("x", "<leader>p", '"_dP')
-
--- keymap.set("n", "<S-h>", ":bprev<CR>")
--- keymap.set("n", "<S-l>", ":bnext<CR>")

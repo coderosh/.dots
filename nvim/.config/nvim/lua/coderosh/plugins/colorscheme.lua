@@ -37,6 +37,10 @@ local function catppuccin(variant)
   vim.cmd([[colorscheme catppuccin]])
 end
 
+local function nightowl()
+  vim.cmd([[colorscheme night-owl]])
+end
+
 local colorschemes = {
   tokyonight_night = {
     "folke/tokyonight.nvim",
@@ -56,6 +60,12 @@ local colorschemes = {
     name = "catppuccin",
     config = function()
       catppuccin("mocha")
+    end,
+  },
+  nightowl = {
+    "oxfist/night-owl.nvim",
+    config = function()
+      nightowl()
     end,
   },
 }

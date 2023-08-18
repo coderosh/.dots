@@ -23,21 +23,24 @@ awful.keyboard.append_global_keybindings({
   awful.key({}, "XF86MonBrightnessUp", function()
     brightness_controller.inc()
   end, { description = "increase brightness", group = "controls" }),
+
   awful.key({}, "XF86MonBrightnessDown", function()
     brightness_controller.dec()
   end, { description = "decrease brightness", group = "controls" }),
+
   awful.key({}, "XF86AudioRaiseVolume", function()
-    -- awful.spawn("amixer -D pulse sset Master 2%+")
     volume_controller.inc()
   end, { description = "increase volume", group = "controls" }),
+
   awful.key({}, "XF86AudioLowerVolume", function()
-    -- awful.spawn("amixer -D pulse sset Master 2%-")
     volume_controller.dec()
   end, { description = "decrease volume", group = "controls" }),
+
   awful.key({}, "XF86AudioMute", function()
     -- awful.spawn("amixer -D pulse sset Master toggle")
     volume_controller.toggle_mute()
   end, { description = "mute volume", group = "controls" }),
+
   awful.key({ "Shift" }, "Print", function()
     awful.spawn("flameshot gui --clipboard -s")
   end),
@@ -52,7 +55,7 @@ awful.keyboard.append_global_keybindings({
     require("ui.scratchpad"):toggle()
   end, { description = "run prompt", group = "launcher" }),
 
-  awful.key({ modkey }, "l", function()
+  awful.key({ modkey, "Shift" }, "x", function()
     awful.util.spawn("betterlockscreen -l")
   end, { description = "lockscreen", group = "launcher" }),
 
