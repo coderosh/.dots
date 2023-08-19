@@ -39,7 +39,3 @@ opt.splitbelow = true
 opt.swapfile = false
 opt.backup = false
 opt.undofile = true
-
-
-
-

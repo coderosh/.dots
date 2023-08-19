@@ -1,11 +1,10 @@
 local function tokyonight(variant)
   local tk = require("tokyonight")
+
   tk.setup({
     style = variant,
     enable = true,
   })
-
-  tk.load()
 end
 
 local function rosepine(variant)
@@ -23,8 +22,6 @@ local function rosepine(variant)
       TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
     },
   })
-
-  vim.cmd([[colorscheme rose-pine]])
 end
 
 local function catppuccin(variant)
@@ -33,39 +30,43 @@ local function catppuccin(variant)
   cp.setup({
     flavour = variant, -- latte, frappe, macchiato, mocha
   })
-
-  vim.cmd([[colorscheme catppuccin]])
-end
-
-local function nightowl()
-  vim.cmd([[colorscheme night-owl]])
 end
 
 local colorschemes = {
   tokyonight_night = {
-    "folke/tokyonight.nvim",
+    plugin = "folke/tokyonight.nvim",
     config = function()
       tokyonight("night")
     end,
+    set_colorscheme = function()
+      vim.cmd([[colorscheme tokyonight]])
+    end,
   },
   rosepine_main = {
-    "rose-pine/neovim",
+    plugin = "rose-pine/neovim",
     name = "rose-pine",
     config = function()
       rosepine("main")
     end,
+    set_colorscheme = function()
+      vim.cmd([[colorscheme rose-pine]])
+    end,
   },
   catppuccin_mocha = {
-    "catppuccin/nvim",
+    plugin = "catppuccin/nvim",
     name = "catppuccin",
     config = function()
       catppuccin("mocha")
     end,
+    set_colorscheme = function()
+      vim.cmd([[colorscheme catppuccin]])
+    end,
   },
   nightowl = {
-    "oxfist/night-owl.nvim",
-    config = function()
-      nightowl()
+    plugin = "oxfist/night-owl.nvim",
+    config = function() end,
+    set_colorscheme = function()
+      vim.cmd([[colorscheme night-owl]])
     end,
   },
 }
@@ -73,12 +74,31 @@ local colorschemes = {
 -- INFO: ccolorscheme sets this variable
 local colorscheme = colorschemes.rosepine_main
 
-colorscheme.lazy = false
-
 -- so that lazy won't list unused colorscheme in uninstall list
 local M = {}
 for _, value in pairs(colorschemes) do
-  table.insert(M, value)
+  local plugin = {
+    value.plugin,
+  }
+
+  if value == colorscheme then
+    plugin.lazy = false
+    plugin.config = function()
+      value.config()
+      value.set_colorscheme()
+    end
+  else
+    plugin.event = "VeryLazy"
+    plugin.config = function()
+      value.config()
+    end
+  end
+
+  if value.name then
+    plugin.name = value.name
+  end
+
+  table.insert(M, plugin)
 end
 
 return M
