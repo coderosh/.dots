@@ -39,11 +39,10 @@ sh -c "$(curl -sSL https://acharyaroshan.com.np/setup-dots.sh)"
 | <kbd>Alt</kbd> + <kbd>Tab</kbd>                    | Window Switcher                     |
 | <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>x</kbd> | Lockscreen                          |
 | <kbd>Shift</kbd> + <kbd>PrtScr</kbd>               | Take Screenshot (save in clipboard) |
-| <kbd>Shift</kbd> + <kbd>PrtScr</kbd>               | Take Screenshot (save in clipboard) |
 | <kbd>XF86MonBrightnessUp</kbd>                     | Increase brightness                 |
 | <kbd>XF86MonBrightnessDown</kbd>                   | Descrease brightness                |
 | <kbd>XF86AudioRaiseVolume</kbd>                    | Increase Volume                     |
-| <kbd>XF86AudioLowerVolume</kbd>                    | Decrease Volume                     |
+| <kbd>XF86AudioMute</kbd>                           | Mute Volume                         |
 
 > & default awesome keybindings
 
