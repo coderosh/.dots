@@ -31,10 +31,12 @@ local awesomemenu = {
 local menu = awful.menu({
   items = {
     { "Awesome", awesomemenu, beautiful.awesome_icon },
-    { "Terminal", terminal },
+    { "Terminal", terminal, "TERM" },
     { "Files", files },
     { "Browser", browser },
     { "ARandR", "arandr" },
+    { "Discord", "discord" },
+    { "Spotify", "spotify" },
   },
 })
 

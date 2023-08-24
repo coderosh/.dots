@@ -21,6 +21,7 @@ function M.right_widgets(s)
   local brightness = require("ui.topbar.widgets.brightness")
   local volume = require("ui.topbar.widgets.volume")
   local mic = require("ui.topbar.widgets.mic")
+  local fs = require("ui.topbar.widgets.fs")
   -- local network = require("ui.topbar.widgets.network")
 
   local layoutbox = require("ui.topbar.widgets.layoutbox")(s)
@@ -32,6 +33,7 @@ function M.right_widgets(s)
     -- network,
     battery,
     mic,
+    fs,
     volume,
     brightness,
     datetime,

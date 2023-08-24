@@ -1,3 +1,23 @@
 #!/bin/sh
 
-# NOP
+function extract {
+  7z x $1 -o$2
+}
+
+function archive  {
+  echo "Not Implemented Yet"
+}
+
+function help {
+  echo "usage: $0 -e file.txt file.enc"
+  echo "       $0 -d file.enc file.txt"
+  exit 1
+}
+
+if [[ "$1" == "e" ]]; then
+  extract "$2" "$3"
+elif [[ "$1" == "a" ]]; then
+  archive "$2" "$3"
+else
+  help
+fi
