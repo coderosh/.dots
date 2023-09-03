@@ -1,7 +1,7 @@
 window:
   padding:
     x: 5
-  opacity: 0.90
+  opacity: 0.85
   dynamic_title: true
 
 import:

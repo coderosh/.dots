@@ -74,16 +74,5 @@ sh -c "$(curl -sSL https://acharyaroshan.com.np/setup-dots.sh)"
 - Change Colorscheme
 
   ```sh
-  ccolorscheme # lists available colorschemes
-
-  ccolorscheme <name> # change colorsocheme
-  ```
-
-- File Encrypt/Decrypt
-
-  ```sh
-  cenc # show help
-
-  cenc -e file.txt file.enc # encrypt file.txt and save as file.enc
-  cenc -d file.enc file.txt # descrypt file.enc and save as file.txt
+  ccolorscheme
   ```

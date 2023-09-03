@@ -1,40 +1,18 @@
 #!/usr/bin/env bash
 
-declare -a colorschemes=(
-   rosepine_main
-   tokyonight_night
-   catppuccin_mocha
-)
+colorschemes=`echo "rosepine_main tokyonight_night catppuccin_mocha" | tr ' ' '\n'`
 
-colorscheme_exists() {
-  local element="$1"
+colorscheme=`printf "$colorschemes" | fzf`
 
-  for item in "${colorschemes[@]}"; do
-    if [ "$item" == "$element" ]; then
-      return 0
-    fi
-  done
-  
-  return 1
-}
+if [ -z "$colorscheme" ]; then
+    echo "Please select a colorscheme"
+    exit
+fi
 
-print_help() {
-  echo "usage: $0 colorscheme_name"
-  echo ""
-  echo "colorschemes:" 
+echo "Changing colorscheme to: $colorscheme"
 
-  for item in "${colorschemes[@]}"; do
-    echo "    $item"
-  done
+if printf $colorscheme | grep -qs $colorscheme; then
 
-  exit 1
-}
-
-
-colorscheme="$1"
-
-if colorscheme_exists $colorscheme; then
-  # awesome
   sed -i "s/local colorscheme = colorschemes\.[^ ]*/local colorscheme = colorschemes.$colorscheme/" ~/.config/awesome/themes/colorscheme/init.lua
 
   # neovim
@@ -43,13 +21,9 @@ if colorscheme_exists $colorscheme; then
   # alacritty
   sed -i "s/config\/alacritty\/[^ ]*\.yml/config\/alacritty\/$colorscheme.yml/" ~/.config/alacritty/alacritty.yml
 
-  # TODO: tmux
-
-
   # Restart awesome
   awesome-client 'awesome.restart()' 2> /dev/null
 
   echo "Done"
-else
-  print_help
+
 fi
