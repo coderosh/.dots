@@ -2,7 +2,7 @@
 
 colorschemes=`echo "rosepine_main tokyonight_night catppuccin_mocha" | tr ' ' '\n'`
 
-colorscheme=`printf "$colorschemes" | fzf`
+colorscheme=`printf "$colorschemes" | fzf --reverse`
 
 if [ -z "$colorscheme" ]; then
     echo "Please select a colorscheme"
