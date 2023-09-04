@@ -13,6 +13,7 @@ echo "Changing colorscheme to: $colorscheme"
 
 if printf $colorscheme | grep -qs $colorscheme; then
 
+  # awesome
   sed -i "s/local colorscheme = colorschemes\.[^ ]*/local colorscheme = colorschemes.$colorscheme/" ~/.config/awesome/themes/colorscheme/init.lua
 
   # neovim
@@ -20,6 +21,9 @@ if printf $colorscheme | grep -qs $colorscheme; then
 
   # alacritty
   sed -i "s/config\/alacritty\/[^ ]*\.yml/config\/alacritty\/$colorscheme.yml/" ~/.config/alacritty/alacritty.yml
+
+  # tmux
+  sed -i "s/config\/tmux\/colorschemes\/[^ ]*\.conf/config\/tmux\/colorschemes\/$colorscheme.conf/" ~/.config/tmux/tmux.conf
 
   # Restart awesome
   awesome-client 'awesome.restart()' 2> /dev/null

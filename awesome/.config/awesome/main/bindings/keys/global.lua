@@ -44,6 +44,9 @@ awful.keyboard.append_global_keybindings({
   awful.key({ "Shift" }, "Print", function()
     awful.spawn("flameshot gui --clipboard -s")
   end),
+  awful.key({}, "Print", function()
+    awful.spawn("flameshot gui")
+  end),
   awful.key({ modkey }, "r", function()
     awful.util.spawn("rofi -show drun")
   end, { description = "run prompt", group = "launcher" }),
