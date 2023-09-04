@@ -1,7 +1,7 @@
 local M = {
   "numToStr/Comment.nvim",
   event = "BufReadPost",
-  config = true
+  config = true,
 }
 
 return M

@@ -26,7 +26,7 @@
 sh -c "$(curl -sSL https://acharyaroshan.com.np/setup-dots.sh)"
 ```
 
-## Keybindings
+## ⌨️ Keybindings
 
 ### Awesome
 
@@ -47,6 +47,8 @@ sh -c "$(curl -sSL https://acharyaroshan.com.np/setup-dots.sh)"
 > & default awesome keybindings
 
 ### Tmux
+
+Prefix: <kbd>Ctrl</kbd> + <kbd>a</kbd>
 
 | Keys                                             | Action               |
 | ------------------------------------------------ | -------------------- |
