@@ -13,8 +13,7 @@
 - **Colorschemes:**
   - [Tokyo Night](https://github.com/folke/tokyonight.nvim)
   - [Rosé Pine](https://github.com/rose-pine)
-  - [Catppuccin](https://github.com/catppuccin)
-- **Editor:** [neovim](https://github.com/neovim/neovim)
+  - [Catppuccin](https://github.com/catppuccin) **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Compositor:** [picom](https://github.com/yshui/picom)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
 - **Terminal multiplexer:** [tmux](https://github.com/tmux/tmux)
@@ -77,4 +76,10 @@ Prefix: <kbd>Ctrl</kbd> + <kbd>a</kbd>
 
   ```sh
   ccolorscheme
+  ```
+
+- Wifi
+
+  ```sh
+  cwifi
   ```
