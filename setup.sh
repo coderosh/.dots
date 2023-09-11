@@ -36,7 +36,7 @@ do
     case $poption in
         "dots related only")
             install_type="minimal"
-            packages_to_install="neovim feh fish picom alacritty bat tmux fd lsd nemo brightnessctl network-manager-applet flameshot xsel stow ttf-noto-nerd ttf-firacode-nerd awesome-git lxsession lxappearance alsa-utils alsa-plugins ripgrep rofi redshift nitrogen brave-bin betterlockscreen"
+            packages_to_install="neovim feh fish picom alacritty bat tmux fd lsd nemo brightnessctl git-delta network-manager-applet flameshot xsel stow ttf-noto-nerd ttf-firacode-nerd awesome-git lxsession lxappearance alsa-utils alsa-plugins ripgrep rofi redshift nitrogen brave-bin betterlockscreen"
             break
         ;;
         "all other not related to dots packages and bloatware")
