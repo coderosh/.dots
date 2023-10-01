@@ -43,7 +43,7 @@ end)
 controller.update()
 
 gears.timer({
-  timeout = 3,
+  timeout = 4,
   call_now = true,
   autostart = true,
   callback = function()
