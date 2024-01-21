@@ -20,7 +20,7 @@ if printf $colorscheme | grep -qs $colorscheme; then
   sed -i "s/local colorscheme = colorschemes\.[^ ]*/local colorscheme = colorschemes.$colorscheme/" ~/.config/nvim/lua/coderosh/plugins/colorscheme.lua
 
   # alacritty
-  sed -i "s/config\/alacritty\/[^ ]*\.yml/config\/alacritty\/$colorscheme.yml/" ~/.config/alacritty/alacritty.yml
+  sed -i "s/config\/alacritty\/[^ ]*\.toml/config\/alacritty\/$colorscheme.toml/" ~/.config/alacritty/alacritty.toml
 
   # tmux
   sed -i "s/config\/tmux\/colorschemes\/[^ ]*\.conf/config\/tmux\/colorschemes\/$colorscheme.conf/" ~/.config/tmux/tmux.conf

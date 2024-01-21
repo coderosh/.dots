@@ -1,0 +1,15 @@
+import = ["/home/coderosh/.config/alacritty/rosepine_main.toml"]
+
+[font]
+size = 10
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[window]
+dynamic_title = true
+opacity = 0.85
+
+[window.padding]
+x = 5
