@@ -5,7 +5,7 @@ local M = {
     "hrsh7th/cmp-nvim-lsp",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
+    "nvimtools/none-ls.nvim",
     "jay-babu/mason-null-ls.nvim",
     "folke/neodev.nvim",
   },
@@ -32,7 +32,7 @@ local M = {
       null_ls = {
         "prettierd",
         "stylua",
-        -- "eslint_d",
+        "eslint_d",
       },
     })
 

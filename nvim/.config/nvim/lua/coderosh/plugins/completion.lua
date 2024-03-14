@@ -1,3 +1,14 @@
+local border = {
+  "╭",
+  "─",
+  "╮",
+  "│",
+  "╯",
+  "─",
+  "╰",
+  "│",
+}
+
 local M = {
   "hrsh7th/nvim-cmp",
   dependencies = {
@@ -28,17 +39,35 @@ local M = {
         ["<CR>"] = cmp.mapping.confirm({ select = false }), -- <C-y>
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete(),
       }),
       sources = cmp.config.sources({
-        { name = "luasnip" },
-        { name = "buffer" },
-        { name = "path" },
-        { name = "nvim_lsp" },
+        { name = "nvim_lsp", priority = 1000 },
+        { name = "path", priority = 500 },
+        { name = "buffer", priority = 100 },
+        { name = "luasnip", priority = 50 },
       }),
+      completion = {
+        completeopt = "menu,menuone",
+      },
+      window = {
+        completion = {
+          winhighlight = "CursorLine:PmenuSel,Search:None",
+          scrollbar = false,
+          border = border,
+        },
+        documentation = {
+          border = border,
+          winhighlight = "Normal:CmpDoc",
+        },
+      },
       formatting = {
+        fields = { "abbr", "kind", "menu" },
+        expandable_indicator = true,
         format = lspkind.cmp_format({
-          maxwidth = 50,
+          maxwidth = 20,
           ellipsis_char = "...",
+          mode = "symbol_text",
         }),
       },
     })

@@ -17,9 +17,13 @@ abbr -a gss 'git status -s'
 
 abbr -a cmatrix 'unimatrix -s 96'
 
+
 fish_add_path -g ~/.dots/.bin
 fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin
+fish_add_path -g ~/go/bin
 fish_add_path ~/.spicetify
 
 rtx activate fish | source
+
+fish_add_path /home/coderosh/.spicetify

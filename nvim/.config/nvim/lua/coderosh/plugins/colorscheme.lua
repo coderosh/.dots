@@ -58,10 +58,41 @@ local function catppuccin(variant)
   }
 end
 
+local function everforest()
+  return {
+    plugin = "neanias/everforest-nvim",
+    name = "everforest",
+    config = function()
+      local ev = require("everforest")
+      ev.setup({})
+    end,
+
+    set_colorscheme = function()
+      vim.cmd([[colorscheme everforest]])
+    end,
+  }
+end
+
+local function nightowl()
+  return {
+    plugin = "oxfist/night-owl.nvim",
+    name = "night-owl",
+    config = function() end,
+    set_colorscheme = function()
+      require("night-owl").setup({
+        italics = false,
+      })
+      vim.cmd.colorscheme("night-owl")
+    end,
+  }
+end
+
 local colorschemes = {
   tokyonight_night = tokyonight("night"),
   rosepine_main = rosepine("main"),
   catppuccin_mocha = catppuccin("mocha"),
+  everforest = everforest(),
+  nightowl = nightowl(),
   nord = {
     plugin = "shaunsingh/nord.nvim",
     config = function()
@@ -75,7 +106,7 @@ local colorschemes = {
 }
 
 -- INFO: ccolorscheme sets this variable
-local colorscheme = colorschemes.rosepine_main
+local colorscheme = colorschemes.tokyonight_night
 
 local M = {}
 for _, value in pairs(colorschemes) do

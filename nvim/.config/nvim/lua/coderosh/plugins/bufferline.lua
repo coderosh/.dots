@@ -3,9 +3,16 @@ local M = {
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
   config = function()
-    require("bufferline").setup({})
+    require("bufferline").setup({
+      options = {
+        tab_size = 22,
+        indicator = {
+          style = "underline",
+        },
+      },
+    })
   end,
-  event = "VeryLazy"
+  event = "VeryLazy",
 }
 
 return M

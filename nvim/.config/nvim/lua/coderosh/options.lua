@@ -25,7 +25,7 @@ opt.clipboard = "unnamedplus"
 
 opt.backspace = "indent,eol,start"
 
-opt.completeopt = "menu,menuone,noselect"
+opt.completeopt = "menu,menuone"
 
 opt.cursorline = true
 opt.signcolumn = "yes"

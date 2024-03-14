@@ -1,10 +1,12 @@
-import = ["/home/coderosh/.config/alacritty/rosepine_main.toml"]
+import = ["/home/coderosh/.config/alacritty/tokyonight_night.toml"]
 
 [font]
-size = 10
+size = 15
 
 [font.normal]
-family = "FiraCode Nerd Font"
+# family = "FiraCode Nerd Font"
+# family = "JetBrainsMono Nerd Font"
+family = "Dank Mono"
 style = "Regular"
 
 [window]
@@ -13,3 +15,4 @@ opacity = 0.85
 
 [window.padding]
 x = 5
+y = 0
