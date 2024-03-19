@@ -17,10 +17,10 @@ local theme = {}
 apply_colorscheme(theme)
 
 theme.font_name = "Noto Sans Nerd Font"
-theme.font_size = dpi(12)
+theme.font_size = dpi(11)
 
 theme.icon_font_name = "Noto Sans Nerd Font"
-theme.icon_font_size = dpi(12)
+theme.icon_font_size = dpi(11)
 
 theme.font = theme.font_name .. " " .. theme.font_size
 theme.icon_font = theme.icon_font_name .. " " .. theme.icon_font_size
