@@ -1,5 +1,4 @@
 local gears = require("gears")
-local naughty = require("naughty")
 local beautiful = require("beautiful")
 
 local wutils = require("utils.widget")

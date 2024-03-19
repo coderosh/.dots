@@ -27,6 +27,7 @@ local function create_colorscheme(theme, black, white, gray, red, green, blue, y
   theme.network_color = cyan
   theme.network_color_nocon = cyan .. "aa"
   theme.fs_color = magenta
+  theme.mem_color = blue
 
   theme.notif = {
     title_bg = gray,

@@ -30,4 +30,6 @@ require("main.rules")
 
 require("ui.notification")
 
+require("ui.topbar.widgets.memory.meminfo")
+
 require("main.autorun")
