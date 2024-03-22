@@ -47,6 +47,9 @@ awful.keyboard.append_global_keybindings({
   awful.key({}, "Print", function()
     awful.spawn("flameshot gui")
   end),
+  awful.key({ modkey }, "v", function()
+    awful.util.spawn("xfce4-popup-clipman")
+  end),
   awful.key({ modkey }, "r", function()
     awful.util.spawn("rofi -show drun")
   end, { description = "run prompt", group = "launcher" }),

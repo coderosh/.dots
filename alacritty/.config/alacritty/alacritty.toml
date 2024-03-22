@@ -1,7 +1,7 @@
 import = ["/home/coderosh/.config/alacritty/tokyonight_night.toml"]
 
 [font]
-size = 15
+size = 10
 
 [font.normal]
 # family = "FiraCode Nerd Font"
@@ -16,3 +16,7 @@ opacity = 0.85
 [window.padding]
 x = 5
 y = 0
+
+# [shell]
+# program = "/usr/bin/fish"
+# args = [ "-c", "tmux attach || tmux" ]

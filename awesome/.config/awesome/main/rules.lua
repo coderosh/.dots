@@ -80,5 +80,10 @@ ruled.client.connect_signal("request::rules", function()
     rule_any = { class = { "Spotify" } },
     properties = { screen = 1, tag = "7" },
   })
+
+  ruled.client.append_rule({
+    rule_any = { class = { "firefox" } },
+    properties = { screen = 1, tag = "1" },
+  })
 end)
 -- }}}

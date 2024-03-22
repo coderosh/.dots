@@ -58,13 +58,15 @@ local function catppuccin(variant)
   }
 end
 
-local function everforest()
+local function everforest(variant)
   return {
     plugin = "neanias/everforest-nvim",
     name = "everforest",
     config = function()
       local ev = require("everforest")
-      ev.setup({})
+      ev.setup({
+        background = variant, -- hard, soft, medium,
+      })
     end,
 
     set_colorscheme = function()
@@ -91,7 +93,7 @@ local colorschemes = {
   tokyonight_night = tokyonight("night"),
   rosepine_main = rosepine("main"),
   catppuccin_mocha = catppuccin("mocha"),
-  everforest = everforest(),
+  everforest_hard = everforest("hard"),
   nightowl = nightowl(),
   nord = {
     plugin = "shaunsingh/nord.nvim",

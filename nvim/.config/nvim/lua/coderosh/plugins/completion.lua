@@ -43,6 +43,7 @@ local M = {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
+        { name = "vim-dadbod-completion", priority = 700 },
         { name = "path", priority = 500 },
         { name = "buffer", priority = 100 },
         { name = "luasnip", priority = 50 },
