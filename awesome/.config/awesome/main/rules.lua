@@ -66,24 +66,45 @@ ruled.client.connect_signal("request::rules", function()
     },
   })
 
-  ruled.client.append_rule({
-    rule_any = { class = { "TelegramDesktop", "discord" } },
-    properties = { screen = 1, tag = "9" },
+  ruled.client.append_rules({
+    {
+      rule_any = { class = { "TelegramDesktop", "discord", "Viber" } },
+      properties = { screen = 1, tag = "9" },
+    },
+    {
+
+      rule_any = { class = { "Nitrogen", "Pavucontrol", "Protonvpn" } },
+      properties = { screen = 1, tag = "8" },
+    },
+    {
+      rule_any = { class = { "Spotify" } },
+      properties = { screen = 1, tag = "7" },
+    },
+    {
+
+      rule_any = { class = { "firefox" } },
+      properties = { screen = 1, tag = "1" },
+    },
   })
 
-  ruled.client.append_rule({
-    rule_any = { class = { "Nitrogen", "Pavucontrol", "Protonvpn" } },
-    properties = { screen = 1, tag = "8" },
-  })
-
-  ruled.client.append_rule({
-    rule_any = { class = { "Spotify" } },
-    properties = { screen = 1, tag = "7" },
-  })
-
-  ruled.client.append_rule({
-    rule_any = { class = { "firefox" } },
-    properties = { screen = 1, tag = "1" },
-  })
+  -- ruled.client.append_rule({
+  --   rule_any = { class = { "TelegramDesktop", "discord", "Viber" } },
+  --   properties = { screen = 1, tag = "9" },
+  -- })
+  --
+  -- ruled.client.append_rule({
+  --   rule_any = { class = { "Nitrogen", "Pavucontrol", "Protonvpn" } },
+  --   properties = { screen = 1, tag = "8" },
+  -- })
+  --
+  -- ruled.client.append_rule({
+  --   rule_any = { class = { "Spotify" } },
+  --   properties = { screen = 1, tag = "7" },
+  -- })
+  --
+  -- ruled.client.append_rule({
+  --   rule_any = { class = { "firefox" } },
+  --   properties = { screen = 1, tag = "1" },
+  -- })
 end)
 -- }}}
