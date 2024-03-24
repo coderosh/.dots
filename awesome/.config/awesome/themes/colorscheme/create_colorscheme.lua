@@ -29,6 +29,13 @@ local function create_colorscheme(theme, black, white, gray, red, green, blue, y
   theme.fs_color = magenta
   theme.mem_color = blue
 
+  theme.tag_active_bg = blue
+  theme.tag_active_fg = black
+  theme.tag_empty_bg = theme.bg_normal
+  theme.tag_empty_fg = white .. "55"
+  theme.tag_inactive_bg = gray
+  theme.tag_inactive_fg = white
+
   theme.notif = {
     title_bg = gray,
     border_color = blue,
