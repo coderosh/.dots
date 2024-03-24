@@ -22,10 +22,6 @@ red = "#eb6f92"
 white = "#e0def4"
 yellow = "#f6c177"
 
-[colors.footer_bar]
-background = "#1f1d2e"
-foreground = "#e0def4"
-
 [colors.hints.end]
 background = "#1f1d2e"
 foreground = "#6e6a86"
