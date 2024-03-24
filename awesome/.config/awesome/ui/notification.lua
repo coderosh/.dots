@@ -17,7 +17,7 @@ ruled.notification.connect_signal("request::rules", function()
         bg = beautiful.notif.message_bg[urgency],
         fg = beautiful.notif.message_fg[urgency],
         timeout = timeouts[i],
-        border_width = dpi(0)
+        border_width = dpi(0),
       },
     })
   end
@@ -80,8 +80,8 @@ naughty.connect_signal("request::display", function(n)
           {
             widget = naughty.list.actions,
           },
-        }
-      }
+        },
+      },
     },
   })
 end)

@@ -24,6 +24,7 @@ function M.right_widgets(s)
   local mem = require("ui.topbar.widgets.memory")
   local fs = require("ui.topbar.widgets.fs")
   -- local network = require("ui.topbar.widgets.network")
+  local notif = require("ui.topbar.widgets.notifications")
 
   local layoutbox = require("ui.topbar.widgets.layoutbox")(s)
 
@@ -38,6 +39,7 @@ function M.right_widgets(s)
     mem,
     volume,
     brightness,
+    notif,
     datetime,
     layoutbox,
   }
