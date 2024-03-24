@@ -39,8 +39,8 @@ return function(s)
   return wibox.widget({
     awful.widget.taglist({
       screen = s,
-      -- filter = awful.widget.taglist.filter.noempty,
-      filter = awful.widget.taglist.filter.all,
+      filter = awful.widget.taglist.filter.noempty,
+      -- filter = awful.widget.taglist.filter.all,
       buttons = {
         awful.button({}, 1, function(t)
           t:view_only()
