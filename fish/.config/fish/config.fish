@@ -18,6 +18,10 @@ abbr -a gss 'git status -s'
 abbr -a cmatrix 'unimatrix -s 96'
 
 
+abbr -a cat 'bat'
+abbr -a catc 'bat --pager=never -A'
+
+
 fish_add_path -g ~/.dots/.bin
 fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin

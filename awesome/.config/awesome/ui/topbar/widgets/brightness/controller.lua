@@ -30,7 +30,7 @@ function controller.update(stdout)
   if stdout then
     local percentage = get_percentage_from_stdout(stdout)
 
-    if percentage < 1 and _prev ~= 1 then
+    if percentage < 1 and _prev > 1 then
       controller.set(1)
     else
       on_update(percentage)

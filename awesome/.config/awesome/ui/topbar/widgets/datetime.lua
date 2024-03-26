@@ -11,7 +11,7 @@ local formats = {
   date_time_12 = " %a %b %d, %I:%M %p ",
 }
 
-local textclock = wibox.widget.textclock(formats.time)
+local textclock = wibox.widget.textclock(formats.date_time)
 local datetime_widget = wutils.topbar_status_widget(nil, textclock, true)
 
 datetime_widget.widget:buttons(awful.util.table.join(
