@@ -60,4 +60,4 @@ end)
 --   end
 -- end)
 
-return notif_widget
+return notif_widget.widget
