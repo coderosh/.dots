@@ -20,4 +20,8 @@ function notifs.remove_all()
   notifs.data = {}
 end
 
+function notifs.get_data()
+  return notifs.data
+end
+
 return notifs
