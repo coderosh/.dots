@@ -81,8 +81,7 @@ ruled.client.connect_signal("request::rules", function()
       properties = { screen = 1, tag = "7" },
     },
     {
-
-      rule_any = { class = { "firefox" } },
+      rule_any = { class = { "firefox", "Google-chrome", "Microsoft-edge" } },
       properties = { screen = 1, tag = "1" },
     },
   })
