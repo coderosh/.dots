@@ -40,6 +40,23 @@ local M = {
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
         ["<C-d>"] = cmp.mapping.scroll_docs(4),
         ["<C-Space>"] = cmp.mapping.complete(),
+
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            local status_ok, luasnip = pcall(require, "luasnip")
+            if status_ok and luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            local status_ok, luasnip = pcall(require, "luasnip")
+            if status_ok and luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" })
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },

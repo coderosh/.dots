@@ -28,6 +28,7 @@ local M = {
         "cssls",
         "tailwindcss",
         "lua_ls",
+        "emmet_language_server",
       },
       null_ls = {
         "prettierd",
