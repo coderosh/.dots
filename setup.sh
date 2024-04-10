@@ -81,13 +81,9 @@ fi
 rustup default stable
 
 # ----- node, bun -----
-rtx install nodejs@lts
-rtx use nodejs@lts
-
-rtx p i bun
-rtx install bun
-rtx use bun
-fish -c "bun completions"
+curl https://mise.run | sh
+~/.local/bin/mise use --global node@lts
+~/.local/bin/mise use --global node@lts
 
 # ----- Docker -----
 sudo systemctl enable docker.service
