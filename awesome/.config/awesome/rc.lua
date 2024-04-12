@@ -28,8 +28,6 @@ require("main.bindings")
 
 require("main.rules")
 
-require("ui.notification")
-
+require("ui.notifications.notification")
 
 require("main.autorun")
-

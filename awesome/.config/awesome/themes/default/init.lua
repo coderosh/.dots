@@ -97,6 +97,7 @@ theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/
 
 theme.wallpaper = themes_path .. "default/background.png"
 theme.wallpaper = "~/.dots/.wallpapers/animegirl-alone-night-window-candle.jpg"
+theme.wallpaper = "~/.dots/.wallpapers/wp13395561-hd-anime-girl-pc-wallpapers.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "default/layouts/fairhw.png"

@@ -5,10 +5,10 @@ local notifs = {
 }
 
 function notifs.add(notif)
-  table.insert(notifs.data, notif)
+  table.insert(notifs.data, 1, notif)
 
   if #notifs.data > capacity then
-    table.remove(notifs.data, 1)
+    table.remove(notifs.data)
   end
 end
 
@@ -18,6 +18,10 @@ end
 
 function notifs.remove_all()
   notifs.data = {}
+end
+
+function notifs.remove(i)
+  table.remove(notifs.data, i)
 end
 
 function notifs.get_data()
