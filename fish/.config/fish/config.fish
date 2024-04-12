@@ -14,6 +14,8 @@ abbr -a yay 'paru'
 abbr -a gs 'git status'
 abbr -a gd 'git diff'
 abbr -a gss 'git status -s'
+abbr -a gc 'git commit -m'
+abbr -a gca 'git commit -am'
 
 abbr -a cmatrix 'unimatrix -s 96'
 
