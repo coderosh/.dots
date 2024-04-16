@@ -5,7 +5,7 @@ size = 10
 
 [font.normal]
 # family = "FiraCode Nerd Font"
-# family = "JetBrainsMono Nerd Font"
+# # family = "JetBrainsMono Nerd Font"
 family = "Dank Mono"
 style = "Regular"
 

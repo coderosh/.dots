@@ -89,11 +89,25 @@ local function nightowl()
   }
 end
 
+local function gruvbox_material(variant, background)
+  return {
+    plugin = "sainnhe/gruvbox-material",
+    config = function() end,
+    set_colorscheme = function()
+      vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_material_background = background -- medium, hard, soft
+      vim.o.background = variant -- light or dark
+      vim.cmd.colorscheme("gruvbox-material")
+    end,
+  }
+end
+
 local colorschemes = {
   tokyonight_night = tokyonight("night"),
   rosepine_main = rosepine("main"),
   catppuccin_mocha = catppuccin("mocha"),
   everforest_hard = everforest("hard"),
+  gruvbox_material_hard_dark = gruvbox_material("dark", "hard"),
   nightowl = nightowl(),
   nord = {
     plugin = "shaunsingh/nord.nvim",
@@ -102,7 +116,8 @@ local colorschemes = {
       vim.g.nord_bold = false
     end,
     set_colorscheme = function()
-      vim.cmd([[colorscheme nord]])
+      vim.cmd.colorscheme("nord")
+      vim.cmd("hi FoldColumn guifg=#4C566A")
     end,
   },
 }
