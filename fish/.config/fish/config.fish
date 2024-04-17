@@ -2,7 +2,10 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-abbr -a v nvim
+bind \cf tsessionizer
+
+
+abbr -a v 'nvim .'
 abbr -a sv 'sudo nvim'
 abbr -a vi 'nvim'
 abbr -a vic 'nvim --clean'

@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-dir="$(find ~/github/{.*,*} -maxdepth 2 -type d | fzf)"
-
-cd "$dir"
-
-echo $(pwd)

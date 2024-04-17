@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [ -z "$TMUX" ]; then
+    echo "Your should be inside tmux for this to work"
+    exit 1
+fi
+
+
+session=$(find ~/github/ -maxdepth 2 -type d | fzf --border --margin 2)
+session_name=$(basename "$session" | tr . _)
+
+if ! tmux has-session -t "$session_name" 2> /dev/null; then
+  tmux new-session -s "$session_name" -c "$session" -d
+fi
+
+tmux switch-client -t "$session_name"
+
