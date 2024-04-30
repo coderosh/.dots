@@ -13,7 +13,7 @@
 - **Colorschemes:**
   - [Tokyo Night](https://github.com/folke/tokyonight.nvim)
   - [Rosé Pine](https://github.com/rose-pine)
-  - [Catppuccin](https://github.com/catppuccin) 
+  - [Catppuccin](https://github.com/catppuccin)
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Compositor:** [picom](https://github.com/yshui/picom)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
@@ -73,7 +73,7 @@ Prefix: <kbd>Ctrl</kbd> + <kbd>a</kbd>
 
 ## Scripts
 
-- Change Colorscheme
+- Change Colorscheme using fzf (nvim, awesome, alacritty, tmux)
 
   ```sh
   ccolorscheme
@@ -83,4 +83,24 @@ Prefix: <kbd>Ctrl</kbd> + <kbd>a</kbd>
 
   ```sh
   cwifi
+  ```
+
+- Open project in new tmux session
+
+  ```sh
+  tsessionizer
+  ```
+
+## Git aliases
+
+- Get authors and commit count
+
+  ```sh
+  git authors
+  ```
+
+- Count no of lines added/removed by author
+
+  ```sh
+  git count-lines "<author>"
   ```
