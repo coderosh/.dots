@@ -1,12 +1,12 @@
 import = ["/home/coderosh/.config/alacritty/tokyonight_night.toml"]
 
 [font]
-size = 10
+size = 8
 
 [font.normal]
-# family = "FiraCode Nerd Font"
-# # family = "JetBrainsMono Nerd Font"
-family = "Dank Mono"
+family = "FiraCode Nerd Font"
+# family = "JetBrainsMono Nerd Font"
+# family = "Dank Mono"
 style = "Regular"
 
 [window]

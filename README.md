@@ -14,6 +14,8 @@
   - [Tokyo Night](https://github.com/folke/tokyonight.nvim)
   - [Rosé Pine](https://github.com/rose-pine)
   - [Catppuccin](https://github.com/catppuccin)
+  - [Nord](https://github.com/nordtheme/nord)
+  - [Gruvbox Material](https://github.com/sainnhe/gruvbox-material)
 - **Editor:** [neovim](https://github.com/neovim/neovim)
 - **Compositor:** [picom](https://github.com/yshui/picom)
 - **Application Launcher:** [rofi](https://github.com/davatorium/rofi)
@@ -64,12 +66,16 @@ Prefix: <kbd>Ctrl</kbd> + <kbd>a</kbd>
 
 ## 📷 Screenshots
 
+- Gruvbox Material
+  ![Gruvbox Material Hard Dark](./.assets/gruvbox_material_hard_dark.png)
+- Tokyonight
+  ![Tokyonight Night](./.assets/tokyonight_night.png)
+- Nord
+  ![Nord](./.assets/nord.png)
 - Rosepine
   ![Rosepine Main](./.assets/rosepine_main.png)
 - Catppuccin
   ![Catppuccin Mocha](./.assets/catppuccin_mocha.png)
-- Tokyonight
-  ![Tokyonight Night](./.assets/tokyonight_night.png)
 
 ## Scripts
 
