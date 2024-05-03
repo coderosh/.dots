@@ -124,7 +124,7 @@ local colorschemes = {
 }
 
 -- INFO: ccolorscheme sets this variable
-local colorscheme = colorschemes.tokyonight_night
+local colorscheme = colorschemes.nord
 
 local M = {}
 for _, value in pairs(colorschemes) do

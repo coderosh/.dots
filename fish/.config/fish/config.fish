@@ -22,6 +22,8 @@ abbr -a gca 'git commit -am'
 
 abbr -a cmatrix 'unimatrix -s 96'
 
+abbr -a neofetch 'fastfetch'
+
 
 abbr -a cat 'bat'
 abbr -a catc 'bat --pager=never -A'
@@ -32,6 +34,8 @@ fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin
 fish_add_path -g ~/go/bin
 fish_add_path ~/.spicetify
+
+fish_config theme choose "nord"
 
 fish_add_path /home/coderosh/.spicetify
 ~/.local/bin/mise activate fish | source
