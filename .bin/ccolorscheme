@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-colorschemes=`echo "rosepine_main tokyonight_night catppuccin_mocha nord" | tr ' ' '\n'`
+colorschemes=`echo "rosepine_main tokyonight_night catppuccin_mocha nord gruvbox_material_hard_dark" | tr ' ' '\n'`
 
 colorscheme=`printf "$colorschemes" | fzf --border --margin=2 --reverse --header 'Select Colorscheme'`
 

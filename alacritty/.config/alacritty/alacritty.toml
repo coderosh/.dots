@@ -1,4 +1,4 @@
-import = ["/home/coderosh/.config/alacritty/nord.toml"]
+import = ["/home/coderosh/.config/alacritty/tokyonight_night.toml"]
 
 [font]
 size = 10

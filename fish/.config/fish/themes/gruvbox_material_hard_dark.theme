@@ -1,0 +1,20 @@
+fish_color_normal e0def4
+fish_color_command 7daea3
+fish_color_keyword bb9af7
+fish_color_quote d8a657
+fish_color_redirection c0caf5
+fish_color_end e78a4e
+fish_color_error ea6962
+fish_color_param 9d7cd8
+fish_color_comment 504945
+fish_color_selection #--background=282828
+fish_color_search_match #--background=282828
+fish_color_operator a9b665
+fish_color_escape bb9af7
+fish_color_autosuggestion 504945
+
+fish_pager_color_progress 504945
+fish_pager_color_prefix 7daea3
+fish_pager_color_completion c0caf5
+fish_pager_color_description 504945
+fish_pager_color_selected_background #--background=282828
