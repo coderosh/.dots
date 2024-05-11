@@ -12,7 +12,7 @@ local colorschemes = {
   gruvbox_material_hard_dark = gruvbox_material.hard_dark,
 }
 
-local colorscheme = colorschemes.tokyonight_night
+local colorscheme = colorschemes.catppuccin_mocha
 
 return {
   colorscheme = colorscheme,

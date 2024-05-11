@@ -1,4 +1,4 @@
-vim.opt.foldcolumn = "1"
+vim.opt.foldcolumn = "0" -- shoudl be 1 to show
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true

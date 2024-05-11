@@ -38,6 +38,7 @@ end
 
 function M.setup(opts)
   local lspconfig = require("lspconfig")
+  local util = require("lspconfig.util")
   local mason_lspconfig = require("mason-lspconfig")
 
   local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -52,6 +53,24 @@ function M.setup(opts)
         capabilities = lsp_capabilities,
       })
     end,
+  })
+
+  lspconfig.gopls.setup({
+    on_attach = lsp_attach,
+    capabilities = lsp_capabilities,
+    cmd = { "gopls" },
+    filetypes = { "go", "gomod", "gowork", "gotmpl" },
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    settings = {
+      gopls = {
+        gofumpt = true,
+        completeUnimported = true,
+        usePlaceholders = true,
+        analyses = {
+          unusedparams = true,
+        },
+      },
+    },
   })
 end
 

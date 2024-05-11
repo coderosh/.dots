@@ -26,3 +26,8 @@ keymap.set("n", "<leader>w", ":w<CR>")
 keymap.set("x", "<leader>p", '"_dP')
 
 keymap.set("n", "<leader>fi", ":!tmux neww tsessionizer<CR>")
+
+keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]])
+keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]])
+keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
+keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]])

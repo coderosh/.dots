@@ -35,7 +35,7 @@ fish_add_path -g ~/.local/bin
 fish_add_path -g ~/go/bin
 fish_add_path ~/.spicetify
 
-fish_config theme choose "tokyonight_night"
+fish_config theme choose "catppuccin_mocha"
 
 fish_add_path /home/coderosh/.spicetify
 ~/.local/bin/mise activate fish | source
