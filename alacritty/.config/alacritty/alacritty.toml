@@ -1,7 +1,7 @@
 import = ["/home/coderosh/.config/alacritty/catppuccin_mocha.toml"]
 
 [font]
-size = 10
+size = 8
 
 [font.normal]
 # family = "FiraCode Nerd Font"

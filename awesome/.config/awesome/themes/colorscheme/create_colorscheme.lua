@@ -1,7 +1,8 @@
 local function create_colorscheme(theme, black, white, gray, red, green, blue, yellow, magenta, cyan)
   theme.widget_bg = gray
 
-  theme.bg_normal = black .. "bb"
+  -- theme.bg_normal = black .. "bb"
+  theme.bg_normal = black
   theme.bg_focus = blue
   theme.bg_urgent = red
   theme.bg_systray = theme.widget_bg
