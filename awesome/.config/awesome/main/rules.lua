@@ -69,20 +69,20 @@ ruled.client.connect_signal("request::rules", function()
   ruled.client.append_rules({
     {
       rule_any = { class = { "TelegramDesktop", "discord", "Viber" } },
-      properties = { screen = 1, tag = "9" },
+      properties = { screen = awful.screen.focused, tag = "9" },
     },
     {
 
       rule_any = { class = { "Nitrogen", "Pavucontrol", "Protonvpn" } },
-      properties = { screen = 1, tag = "8" },
+      properties = { screen = awful.screen.focused, tag = "8" },
     },
     {
       rule_any = { class = { "Spotify" } },
-      properties = { screen = 1, tag = "7" },
+      properties = { screen = awful.screen.focused, tag = "7" },
     },
     {
       rule_any = { class = { "firefox", "Google-chrome", "Microsoft-edge" } },
-      properties = { screen = 1, tag = "1" },
+      properties = { screen = awful.screen.focused, tag = "1" },
     },
   })
 

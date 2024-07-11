@@ -1,17 +1,24 @@
 #!/usr/bin/env bash
 
-if [ -z "$TMUX" ]; then
-    echo "Your should be inside tmux for this to work"
-    exit 1
-fi
+# if in tmux open new tmux window, if else outside tmux open in vscode
 
+project_dirs="$(find ~/github/ -maxdepth 2 -type d)"
+config_dirs="$(find ~/.dots/ -maxdepth 3 -mindepth 3 -type d)"
 
-session=$(find ~/github/ -maxdepth 2 -type d | fzf --border --margin 2)
+session=$(echo -e "$project_dirs\n$config_dirs" | fzf --border --margin 2)
 session_name=$(basename "$session" | tr . _)
 
-if ! tmux has-session -t "$session_name" 2> /dev/null; then
-  tmux new-session -s "$session_name" -c "$session" -d
+if [ -z "$TMUX" ]; then
+    code "$session" 
+else
+  if ! tmux has-session -t "$session_name" 2> /dev/null; then
+    tmux new-session -s "$session_name" -c "$session" -d
+  fi
+
+  tmux switch-client -t "$session_name"
 fi
 
-tmux switch-client -t "$session_name"
+
+
+
 

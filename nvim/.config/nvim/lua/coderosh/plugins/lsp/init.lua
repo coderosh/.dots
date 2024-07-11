@@ -7,7 +7,7 @@ local M = {
     "williamboman/mason-lspconfig.nvim",
     "nvimtools/none-ls.nvim",
     "jay-babu/mason-null-ls.nvim",
-    "folke/neodev.nvim",
+    "folke/lazydev.nvim",
   },
   event = "VeryLazy",
   config = function()
@@ -15,15 +15,18 @@ local M = {
       symbol_in_winbar = {
         enable = false,
       },
+      ui = {
+        code_action = "",
+      },
     })
 
-    require("neodev").setup()
+    require("lazydev").setup()
 
     local lsputils = require("coderosh.plugins.lsp.utils")
 
     lsputils.mason_install({
       lsp = {
-        "tsserver",
+        -- "tsserver",
         "html",
         "cssls",
         "tailwindcss",

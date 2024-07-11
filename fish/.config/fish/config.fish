@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-bind \cf tsessionizer
+bind \cf . tsessionizer
 
 
 abbr -a v 'nvim .'
@@ -12,6 +12,7 @@ abbr -a vic 'nvim --clean'
 
 abbr -a ls 'lsd'
 abbr -a lsa 'lsd -a'
+abbr -a la 'lsd -al'
 abbr -a yay 'paru'
 
 abbr -a gs 'git status'

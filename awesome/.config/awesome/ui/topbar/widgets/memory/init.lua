@@ -16,7 +16,7 @@ end)
 meminfo.update()
 
 gears.timer({
-  timeout = 5,
+  timeout = 10,
   call_now = true,
   autostart = true,
   callback = function()

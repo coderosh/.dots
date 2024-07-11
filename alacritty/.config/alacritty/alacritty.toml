@@ -19,4 +19,4 @@ y = 0
 
 # [shell]
 # program = "/usr/bin/fish"
-# args = [ "-c", "tmux attach || tmux" ]
+# args = ["-c", "tmux attach || tmux"]

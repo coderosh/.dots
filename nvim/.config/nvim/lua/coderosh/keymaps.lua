@@ -31,3 +31,5 @@ keymap.set("t", "<C-h>", [[<C-\><C-n><C-w>h]])
 keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]])
 keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
 keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]])
+
+vim.keymap.set({ "n", "t" }, "<C-`>", "<cmd>Lspsaga term_toggle<cr>")
