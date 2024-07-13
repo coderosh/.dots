@@ -3,6 +3,10 @@ import = ["/home/coderosh/.config/alacritty/catppuccin_mocha.toml"]
 [font]
 size = 8
 
+[font.offset]
+x = 0
+y = 1
+
 [font.normal]
 # family = "FiraCode Nerd Font"
 # family = "JetBrainsMono Nerd Font"
@@ -12,6 +16,7 @@ style = "Regular"
 [window]
 dynamic_title = true
 opacity = 0.85
+decorations = "none"
 
 [window.padding]
 x = 5
