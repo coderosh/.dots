@@ -13,9 +13,23 @@ function M.mason_install(opts)
   mason_null_ls.setup({
     ensure_installed = opts.null_ls,
     handlers = {},
+    automatic_installation = true,
   })
 
-  require("null-ls").setup({})
+  local null_ls = require("null-ls")
+  null_ls.setup({
+    on_attach = function(client, bufnr)
+      if client.supports_method("textDocument/formatting") then
+        vim.api.nvim_clear_autocmds({ buffer = bufnr })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          buffer = bufnr,
+          callback = function()
+            M.format()
+          end,
+        })
+      end
+    end,
+  })
 end
 
 function M.keymaps(bufnr)
@@ -55,6 +69,35 @@ function M.setup(opts)
     end,
   })
 
+  lspconfig.eslint.setup({
+    on_attach = function(client)
+      client.server_capabilities.documentFormattingProvider = true
+      if client.server_capabilities.documentFormattingProvider then
+        local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          pattern = "*",
+          callback = function()
+            vim.lsp.buf.format({ async = true })
+          end,
+          group = au_lsp,
+        })
+      end
+    end,
+    capabilities = lsp_capabilities,
+    settings = {
+      codeAction = {
+        showDocumentation = {
+          enable = true,
+        },
+      },
+      codeActionOnSave = {
+        enable = true,
+        mode = "all",
+      },
+      format = true,
+    },
+  })
+
   lspconfig.gopls.setup({
     on_attach = lsp_attach,
     capabilities = lsp_capabilities,
@@ -75,8 +118,11 @@ function M.setup(opts)
 end
 
 -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/format.lua
-function M.format()
-  local buf = vim.api.nvim_get_current_buf()
+function M.format(buf)
+  if not buf then
+    buf = vim.api.nvim_get_current_buf()
+  end
+
   local ft = vim.bo[buf].filetype
   local have_nls = package.loaded["null-ls"]
     and (#require("null-ls.sources").get_available(ft, "NULL_LS_FORMATTING") > 0)

@@ -32,11 +32,11 @@ local M = {
         "tailwindcss",
         "lua_ls",
         "emmet_language_server",
+        "eslint",
       },
       null_ls = {
         "prettierd",
         "stylua",
-        "eslint_d",
       },
     })
 

@@ -9,7 +9,9 @@ session=$(echo -e "$project_dirs\n$config_dirs" | fzf --border --margin 2)
 session_name=$(basename "$session" | tr . _)
 
 if [ -z "$TMUX" ]; then
+  if [ ! -z "$session" ]; then
     code "$session" 
+  fi
 else
   if ! tmux has-session -t "$session_name" 2> /dev/null; then
     tmux new-session -s "$session_name" -c "$session" -d
