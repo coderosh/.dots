@@ -64,6 +64,7 @@ local M = {
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 1000 },
+        { name = "nvim_lsp_signature_help", priority = 800 },
         { name = "vim-dadbod-completion", priority = 700 },
         { name = "path", priority = 500 },
         { name = "buffer", priority = 100 },

@@ -16,13 +16,15 @@ function M.mason_install(opts)
     automatic_installation = true,
   })
 
+  local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
   local null_ls = require("null-ls")
   null_ls.setup({
     on_attach = function(client, bufnr)
       if client.supports_method("textDocument/formatting") then
-        vim.api.nvim_clear_autocmds({ buffer = bufnr })
+        vim.api.nvim_clear_autocmds({ buffer = bufnr, group = augroup })
         vim.api.nvim_create_autocmd("BufWritePre", {
           buffer = bufnr,
+          group = augroup,
           callback = function()
             M.format()
           end,
@@ -48,6 +50,8 @@ function M.keymaps(bufnr)
   vim.keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
   vim.keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", opts)
   vim.keymap.set("n", "<leader>ff", M.format, opts)
+  vim.keymap.set("i", "<c-s>", vim.lsp.buf.signature_help, opts)
+  vim.keymap.set("n", "<leader>hi", M.toggle_inlayhints, opts)
 end
 
 function M.setup(opts)
@@ -69,19 +73,29 @@ function M.setup(opts)
     end,
   })
 
+  lspconfig.rust_analyzer.setup({
+    on_attach = lsp_attach,
+    capabilities = lsp_capabilities,
+    settings = {
+      rust_analyzer = {
+        cargo = {
+          allFeatures = true,
+        },
+        diagnostics = {
+          enable = true,
+        },
+      },
+    },
+  })
+
+  local eslint_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
   lspconfig.eslint.setup({
-    on_attach = function(client)
-      client.server_capabilities.documentFormattingProvider = true
-      if client.server_capabilities.documentFormattingProvider then
-        local au_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
-        vim.api.nvim_create_autocmd("BufWritePre", {
-          pattern = "*",
-          callback = function()
-            vim.lsp.buf.format({ async = true })
-          end,
-          group = au_lsp,
-        })
-      end
+    on_attach = function(_, bufnr)
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = bufnr,
+        command = "EslintFixAll",
+        group = eslint_lsp,
+      })
     end,
     capabilities = lsp_capabilities,
     settings = {
@@ -136,6 +150,14 @@ function M.format(buf)
       return c.name ~= "null-ls"
     end,
   }, {}))
+end
+
+vim.g.inlay_hints_visible = false
+function M.toggle_inlayhints()
+  if vim.lsp.inlay_hint then
+    vim.g.inlay_hints_visible = not vim.g.inlay_hints_visible
+    vim.lsp.inlay_hint.enable(vim.g.inlay_hints_visible)
+  end
 end
 
 return M

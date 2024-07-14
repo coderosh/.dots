@@ -3,6 +3,7 @@ local M = {
   dependencies = {
     "glepnir/lspsaga.nvim",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "nvimtools/none-ls.nvim",
@@ -33,10 +34,13 @@ local M = {
         "lua_ls",
         "emmet_language_server",
         "eslint",
+        "gopls",
+        "rust_analyzer",
       },
       null_ls = {
         "prettierd",
         "stylua",
+        "gofumpt",
       },
     })
 

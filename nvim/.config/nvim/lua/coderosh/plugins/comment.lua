@@ -1,7 +1,11 @@
-local M = {
-  "numToStr/Comment.nvim",
-  event = "BufReadPost",
-  config = true,
-}
+-- return {
+--   "numToStr/Comment.nvim",
+--   event = "BufReadPost",
+--   config = true,
+-- }
 
-return M
+return {
+  "folke/ts-comments.nvim",
+  opts = {},
+  event = "VeryLazy",
+}
