@@ -4,7 +4,6 @@ end
 
 bind \cf . tsessionizer
 
-
 abbr -a v 'nvim .'
 abbr -a sv 'sudo nvim'
 abbr -a vi 'nvim'
@@ -25,18 +24,14 @@ abbr -a cmatrix 'unimatrix -s 96'
 
 abbr -a neofetch 'fastfetch'
 
-
 abbr -a cat 'bat'
 abbr -a catc 'bat --pager=never -A'
-
 
 fish_add_path -g ~/.dots/.bin
 fish_add_path -g ~/.cargo/bin
 fish_add_path -g ~/.local/bin
 fish_add_path -g ~/go/bin
-fish_add_path ~/.spicetify
 
 fish_config theme choose "catppuccin_mocha"
 
-fish_add_path /home/coderosh/.spicetify
 ~/.local/bin/mise activate fish | source
