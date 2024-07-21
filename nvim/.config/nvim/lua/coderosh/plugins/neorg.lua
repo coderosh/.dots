@@ -1,31 +1,28 @@
-local M = {
+return {
   "nvim-neorg/neorg",
-  build = ":Neorg sync-parsers",
-  -- event = "VeryLazy",
-  opts = {
-    load = {
-      ["core.defaults"] = {}, -- Loads default behaviour
-      ["core.concealer"] = {}, -- Adds pretty icons to your documents
-      ["core.completion"] = {
-        config = {
-          engine = "nvim-cmp",
+  event = "VeryLazy",
+  version = "*",
+  config = function()
+    local neorg = require("neorg")
+
+    neorg.setup({
+      load = {
+        ["core.defaults"] = {},
+        ["core.concealer"] = {},
+        ["core.completion"] = {
+          config = {
+            engine = "nvim-cmp",
+          },
         },
-      },
-      ["core.presenter"] = {
-        config = {
-          zen_mode = "zen-mode",
-        },
-      }, -- Adds pretty icons to your documents
-      ["core.dirman"] = { -- Manages Neorg workspaces
-        config = {
-          workspaces = {
-            notes = "~/notes",
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              notes = "~/.neorg",
+            },
+            default_workspace = "notes",
           },
         },
       },
-    },
-  },
-  dependencies = { { "nvim-lua/plenary.nvim" } },
+    })
+  end,
 }
-
-return M

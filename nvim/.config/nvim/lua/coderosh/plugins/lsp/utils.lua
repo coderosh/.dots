@@ -37,7 +37,7 @@ end
 function M.keymaps(bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
-  vim.keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<cr>", opts)
+  vim.keymap.set("n", "gf", "<cmd>Lspsaga finder<cr>", opts)
   vim.keymap.set("n", "gp", "<cmd>Lspsaga peek_definition<cr>", opts)
   vim.keymap.set("n", "gd", "<cmd>Lspsaga goto_definition<cr>", opts)
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
