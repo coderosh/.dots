@@ -17,13 +17,18 @@ local notif_container = wibox.widget({
 })
 
 local header = wibox.widget({
-  widget = wibox.container.margin,
-  margins = 10,
+  widget = wibox.container.background,
+  bg = beautiful.notif.title_bg,
   {
-    markup = "<span font_desc='14' weight='bold'>Notifications (WIP)</span>",
-    align = "center",
-    valign = "center",
-    widget = wibox.widget.textbox,
+
+    widget = wibox.container.margin,
+    margins = 10,
+    {
+      markup = "<span font_desc='14'>Notifications</span>",
+      align = "center",
+      valign = "center",
+      widget = wibox.widget.textbox,
+    },
   },
 })
 
@@ -38,10 +43,13 @@ local notif_popup = awful.popup({
       --   color = beautiful.border_focus,
       --   visible = true,
       -- },
-      notif_container,
+      {
+        widget = wibox.container.margin,
+        notif_container,
+        margins = 10,
+      },
       layout = wibox.layout.fixed.vertical,
     },
-    margins = 10,
     forced_height = screen_geometry.height - margin - top_margin,
     forced_width = width,
     widget = wibox.container.margin,
