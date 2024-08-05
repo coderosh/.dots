@@ -66,7 +66,9 @@ bat cache --build
 
 # ----- Fish plugins -----
 yellow "\n${arrow_prefix} Installing fish plugins"
-fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | fisher update"
+fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
+fish -c "fisher update"
+fish -c "fish_update_completions"
 chsh -s $(which fish)
 
 #---- Betterlockscreen ----

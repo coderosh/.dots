@@ -19,3 +19,5 @@ run xfce4-clipman
 
 run discord
 
+# map capslock to escape
+setxkbmap -option caps:escape

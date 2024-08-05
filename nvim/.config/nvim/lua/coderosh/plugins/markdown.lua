@@ -5,5 +5,5 @@ return {
   config = function()
     require("render-markdown").setup({})
   end,
-  event = "VeryLazy",
+  -- event = "VeryLazy",
 }

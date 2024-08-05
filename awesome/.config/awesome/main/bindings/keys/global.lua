@@ -13,8 +13,6 @@ local revelation = require("main.revelation")
 local modkey = pref.modkey
 local terminal = pref.terminal
 
-
-
 awful.keyboard.append_global_keybindings({
   awful.key({ "Mod1" }, "Tab", function()
     awesome.emit_signal("bling::window_switcher::turn_on")

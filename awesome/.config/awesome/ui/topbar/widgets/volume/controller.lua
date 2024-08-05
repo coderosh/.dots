@@ -1,15 +1,12 @@
 local awful = require("awful")
 
-
-
 -- TODO: use dbus
 
 local controller = {}
 
-
 local function get_percentage_from_stdout(stdout)
   -- local percentage_str = stdout:match("%[(%d+)%%%]")
-  local percentage, status = stdout:match("(%d+)%%")
+  local percentage, status = stdout:match("%[(%d+)%%%] %[(%a+)%]")
   controller._percentage = percentage
 
   return {
@@ -40,7 +37,7 @@ function controller.toggle_mute()
 end
 
 function controller.update()
-  awful.spawn.easy_async("pactl get-sink-volume 0", function(stdout)
+  awful.spawn.easy_async("amixer -D pulse sget Master", function(stdout)
     on_update(get_percentage_from_stdout(stdout))
   end)
 end

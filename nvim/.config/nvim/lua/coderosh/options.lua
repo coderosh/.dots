@@ -18,6 +18,7 @@ opt.incsearch = true
 opt.wrap = false
 
 opt.cmdheight = 1
+opt.showmode = false
 
 opt.background = "dark"
 
