@@ -3,6 +3,7 @@ local beautiful = require("beautiful")
 local dpi = beautiful.xresources.apply_dpi
 
 local sutils = require("utils.shape")
+local futils = require("utils.funcs")
 
 local gaps = dpi(10)
 local function notification_box(data)
@@ -47,13 +48,16 @@ local function notification_box(data)
     {
       widget = wibox.widget.textbox,
       text = title,
-      markup = "<b>" .. title .. "</b>",
+      -- markup = "<b>" .. title .. "</b>",
     },
+    forced_width = 350,
+    forced_height = 20,
   })
 
   local messagew = wibox.widget({
     widget = wibox.widget.textbox,
     text = message,
+    forced_height = futils.ternary(#message > 300, 100, nil),
   })
 
   local iconw = wibox.widget({
@@ -90,6 +94,7 @@ local function notification_box(data)
               margins = gaps,
               {
                 layout = wibox.layout.fixed.horizontal,
+                spacing = 10,
                 iconw,
                 messagew,
               },
