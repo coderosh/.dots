@@ -30,6 +30,7 @@ opt.completeopt = "menu,menuone"
 
 opt.cursorline = true
 opt.signcolumn = "yes"
+opt.statuscolumn = [[%!v:lua.require'snacks.statuscolumn'.get()]]
 opt.termguicolors = true
 
 opt.scrolloff = 8
@@ -42,3 +43,24 @@ opt.backup = false
 opt.undofile = true
 
 opt.exrc = true
+
+opt.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+opt.fillchars = {
+	foldopen = "",
+	foldclose = "",
+	fold = " ",
+	foldsep = " ",
+	diff = "╱",
+	eob = " ",
+}
+opt.foldlevel = 99
+if vim.fn.has("nvim-0.10") == 1 then
+	opt.smoothscroll = true
+	opt.foldexpr = "v:lua.require'coderosh.util.fold'.foldexpr()"
+	opt.foldmethod = "expr"
+	opt.foldtext = ""
+else
+	opt.foldmethod = "indent"
+	opt.foldtext = "v:lua.require'coderosh.util.fold'.foldtext()"
+end

@@ -1,12 +1,10 @@
 return {
-  "nvim-lua/plenary.nvim",
-  dependencies = {
-    "nvim-pack/nvim-spectre",
-  },
-  event = "VeryLazy",
-  config = function()
-    vim.keymap.set("n", "<leader>S", '<cmd>lua require("spectre").toggle()<CR>', {
-      desc = "Toggle Spectre",
-    })
-  end,
+	"nvim-pack/nvim-spectre",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+	cmd = "Spectre",
+	keys = {
+		{ "<leader>S", ":Spectre toggle<CR>" },
+	},
 }
