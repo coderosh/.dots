@@ -15,6 +15,7 @@ run nitrogen --restore
 run nm-applet
 run flameshot
 run xfce4-clipman
+run xmousepasteblock
 # run discord --start-minimized
 
 run discord

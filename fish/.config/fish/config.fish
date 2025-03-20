@@ -5,6 +5,7 @@ end
 bind \cf . tsessionizer
 
 abbr -a v 'nvim .'
+abbr -a vv 'NVIM_APPNAME=new-nvim nvim .'
 abbr -a sv 'sudo nvim'
 abbr -a vi 'nvim'
 abbr -a vic 'nvim --clean'

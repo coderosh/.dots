@@ -36,11 +36,13 @@ local M = {
         "eslint",
         "gopls",
         "rust_analyzer",
+        "clangd",
       },
       null_ls = {
         "prettierd",
         "stylua",
         "gofumpt",
+        "goimports",
       },
     })
 

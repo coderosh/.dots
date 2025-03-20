@@ -6,14 +6,13 @@ local M = {
     "nvim-tree/nvim-web-devicons",
     "MunifTanjim/nui.nvim",
   },
-  lazy = false
+  lazy = false,
 }
 
 function M.config()
-
   require("neo-tree").setup({
     close_if_last_window = true,
-    window = { width = 30 },
+    -- window = { width = 30 },
   })
 
   vim.keymap.set("n", "<leader>ef", ":Neotree toggle reveal<CR>")

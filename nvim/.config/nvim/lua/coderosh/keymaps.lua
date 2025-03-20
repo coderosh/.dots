@@ -33,4 +33,8 @@ keymap.set("t", "<C-j>", [[<C-\><C-n><C-w>j]])
 keymap.set("t", "<C-k>", [[<C-\><C-n><C-w>k]])
 keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]])
 
-vim.keymap.set({ "n", "t" }, "<C-`>", "<cmd>Lspsaga term_toggle<cr>")
+keymap.set({ "n", "t" }, "<C-`>", "<cmd>Lspsaga term_toggle<cr>")
+
+keymap.set("n", "<leader>jkm", ":CellularAutomaton make_it_rain<CR>")
+keymap.set("n", "<leader>jks", ":CellularAutomaton scramble<CR>")
+keymap.set("n", "<leader>jkg", ":CellularAutomaton game_of_life<CR>")

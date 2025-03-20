@@ -63,6 +63,7 @@ local M = {
         end, { "i", "s" }),
       }),
       sources = cmp.config.sources({
+        { name = "cody", priority = 2000 },
         { name = "nvim_lsp", priority = 1000 },
         { name = "neorg", priority = 900 },
         { name = "nvim_lsp_signature_help", priority = 800 },

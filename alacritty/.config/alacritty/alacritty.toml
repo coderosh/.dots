@@ -1,31 +1,34 @@
-import = ["/home/coderosh/.config/alacritty/catppuccin_mocha.toml"]
 
 [font]
-size = 8
+size = 12
 
-# [font.offset]
-# x = 0
-# y = 1
-#
-# [font.glyph_offset]
-# x = 0
-# y = 1
+[font.offset]
+x = 0
+y = 4
+
+[font.glyph_offset]
+x = 0
+y = 1
 
 [font.normal]
-family = "FiraCode Nerd Font"
+# family = "FiraCode Nerd Font"
 # family = "JetBrainsMono Nerd Font Mono"
-# family = "Dank Mono"
+# family = "JetBrainsMono Nerd Font"
+family = "Dank Mono"
 style = "Regular"
 
 
 [window]
 dynamic_title = true
-opacity = 0.85
+opacity = 0.95
 decorations = "none"
 
 [window.padding]
 x = 5
 y = 0
+
+[general]
+import = ["/home/coderosh/.config/alacritty/catppuccin_mocha.toml"]
 
 
 # [shell]

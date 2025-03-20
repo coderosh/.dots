@@ -6,9 +6,6 @@ local M = {
     require("bufferline").setup({
       options = {
         tab_size = 22,
-        indicator = {
-          style = "underline",
-        },
       },
     })
   end,

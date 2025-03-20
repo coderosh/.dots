@@ -102,6 +102,33 @@ local function gruvbox_material(variant, background)
   }
 end
 
+local function moonfly()
+  return {
+    plugin = "bluz71/vim-moonfly-colors",
+    name = "moonfly",
+    config = function() end,
+    set_colorscheme = function()
+      vim.cmd.colorscheme("moonfly")
+    end,
+  }
+end
+
+local function vscode()
+  return {
+    plugin = "gmr458/vscode_modern_theme.nvim",
+    name = "vscode",
+    config = function()
+      require("vscode_modern").setup({
+        cursorline = true,
+        nvim_tree_darker = true,
+      })
+    end,
+    set_colorscheme = function()
+      vim.cmd.colorscheme("vscode_modern")
+    end,
+  }
+end
+
 local colorschemes = {
   tokyonight_night = tokyonight("night"),
   rosepine_main = rosepine("main"),
@@ -109,6 +136,8 @@ local colorschemes = {
   everforest_hard = everforest("hard"),
   gruvbox_material_hard_dark = gruvbox_material("dark", "hard"),
   nightowl = nightowl(),
+  moonfly = moonfly(),
+  vscode = vscode(),
   nord = {
     -- plugin = "shaunsingh/nord.nvim",
     plugin = "gbprod/nord.nvim",
